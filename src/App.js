@@ -1,8 +1,13 @@
-import './App.css';
+// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import classes from './App.module.css';
+import Header from './components/Header'
+
 
 function App() {
   return(
-    <div></div>
+    // <Router>
+      <Header />
+    // </Router>
   )
 }
 
