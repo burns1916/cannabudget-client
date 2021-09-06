@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header'
 import Balance from './components/Balance'
 import AddTransaction from './components/AddTransaction'
+import IncomeList from './components/IncomeList'
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Balance />
       <AddTransaction />
+      <IncomeList />
     </Router>
   )
 }
