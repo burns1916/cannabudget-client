@@ -1,12 +1,14 @@
-import { currentUserReducer } from './currentUser';
-import { transactionReducer } from './transactions';
+// import { currentUserReducer } from './currentUser';
+import { incomeTransactionReducer } from './incomeTransactions';
+import { expenseTransactionReducer } from './expenseTransactions';
 
 import { combineReducers } from 'redux';
 
-const reducer = combineReducers({
-    currentUser: currentUserReducer,
-    transactions: transactionReducer
+const rootReducer = combineReducers({
+    // currentUser: currentUserReducer,
+    incomeTransactions: incomeTransactionReducer,
+    expenseTransactions: expenseTransactionReducer,
 
 })
 
-export default reducer
+export default rootReducer
