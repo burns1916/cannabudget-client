@@ -1,19 +1,37 @@
-import React from 'react'
+import React, { Component } from 'react'
 import classes from './ExpenseList.module.css'
+import { connect } from 'react-redux'
 
-export const ExpenseList = () => {
+class ExpenseList extends Component {
+
+    expensesList() {
+        return this.props.expenseTransactions.map((expense) => {
+            return (
+                <li className={classes.Transaction}>
+                <span key={expense.id}>{expense.name}</span>
+                <span key={expense.id}>{expense.amount}</span>
+                <button className={classes.DeleteBtn}><i className="fas fa-trash"></i></button>
+                </li>
+            );
+        });
+    }
+
+    render() {
     return (
         <div className={classes.TransactionsExpense}>
         <h2>Transaction History</h2>
         <ul className={classes.TransacitonList}>
-            <li className={classes.Transaciton}>
-                <span className={classes.TransactionText}>Salary</span>
-                <span className={classes.TransactionAmount}>$5000</span>
-                <button className={classes.DeleteBtn}><i className="fas fa-trash"></i></button>
-            </li>
+            {this.expensesList()}
         </ul>
     </div>
     )
+    }
 }
 
-export default ExpenseList
+function mapStateToProps(state) {
+    return{
+        expenseTransactions: state.expenseTransactions
+    }
+}
+
+export default connect(mapStateToProps)(ExpenseList)
