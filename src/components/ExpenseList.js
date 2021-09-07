@@ -5,11 +5,13 @@ import { connect } from 'react-redux'
 class ExpenseList extends Component {
 
     expensesList = () => { this.props.expenseTransactions.map((expense) => {
+                return (
                 <li className={classes.Transaction}>
                 <span key={expense.id}>{expense.name}</span>
                 <span key={expense.id}>{expense.amount}</span>
                 <button className={classes.DeleteBtn}><i className="fas fa-trash"></i></button>
                 </li>
+                );
         });
     }
 
