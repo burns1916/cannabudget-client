@@ -4,31 +4,28 @@ import { connect } from 'react-redux'
 
 class ExpenseList extends Component {
 
-    expensesList() {
-        return this.props.expenseTransactions.map((expense) => {
-            return (
+    expensesList = () => { this.props.expenseTransactions.map((expense) => {
                 <li className={classes.Transaction}>
                 <span key={expense.id}>{expense.name}</span>
                 <span key={expense.id}>{expense.amount}</span>
                 <button className={classes.DeleteBtn}><i className="fas fa-trash"></i></button>
                 </li>
-            );
         });
     }
 
     render() {
     return (
         <div className={classes.TransactionsExpense}>
-        <h2>Transaction History</h2>
+        <h2>Expense Transaction History</h2>
         <ul className={classes.TransacitonList}>
-            {this.expensesList()}
+            {this.expensesList}
         </ul>
     </div>
     )
     }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
     return{
         expenseTransactions: state.expenseTransactions
     }

@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './AddExpenseTransaction.module.css'
 
-export const AddExpenseTransaction = () => {
+const AddExpenseTransaction = () => {
     return (
         <div>
             <form>
