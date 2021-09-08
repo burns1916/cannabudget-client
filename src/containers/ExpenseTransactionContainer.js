@@ -9,16 +9,18 @@ import { addExpense, getExpense } from '../actions/expenseTransactions'
 class ExpenseTransactionContainer extends React.Component {
     
     state = {
-        id: uuid(),
-        name: '',
-        amount: '',
+        expense: {
+            id: uuid(),
+            name: '',
+            amount: '',
+        },
     }
 
     
 
     render() {
         return(
-
+            <AddExpenseTransaction {...this.state.expense} onChange={this.onChange} onSubmit={this.onSubmit}/>
         )
     }
 }
@@ -27,10 +29,5 @@ const mapStateToProps = state => {
     expenseTransactions: state.expenseTransactions
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-
-    }
-}
 
 export default connect(mapStateToProps,{addExpense, getExpense})(ExpenseTransactionContainer)
