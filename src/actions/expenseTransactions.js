@@ -4,7 +4,7 @@ import {
         GET_EXPENSE
         } from '../actionTypes';
 
-const BASE_URL = 'http://localhost:3000/'
+const BASE_URL = 'https://cannabudget-project.herokuapp.com/'
 const EXPENSE_URL = `${BASE_URL}/expenses`
 
 export const getExpense = () => {
