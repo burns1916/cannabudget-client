@@ -13,11 +13,11 @@ function App() {
   return(
     <Router>
       <Header />
-      <Balance />
-      <AddIncomeTransaction />
-      <AddExpenseTransaction />
-      <IncomeList />
-      <ExpenseList />
+      {/* <Balance /> */}
+      {/* <AddIncomeTransaction /> */}
+      {/* <AddExpenseTransaction /> */}
+      {/* <IncomeList /> */}
+      {/* <ExpenseList /> */}
     </Router>
   )
 }
