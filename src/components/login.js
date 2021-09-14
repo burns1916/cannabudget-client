@@ -30,7 +30,27 @@ class Login extends Component {
 
     render() {
         return(
-
+            <>
+            { !this.props.loggedIn ?
+            <div>
+                <form className={classes.formContainer} onSubmit={this.onSubmit}>
+                    <div>
+                        <h2>Login</h2>
+                    </div>
+                    <div>
+                        <input placeholder="username" value={this.state.username} name="username" type="text" onChange={this.onChange} />
+                    </div>
+                    <div>
+                        <input placeholder="password" value={this.state.password} name="password" type="password" onChange={this.onChange} />
+                    </div>
+                    <div>
+                        <input type="submit" value="Log In" />
+                    </div>
+                </form>
+            </div>
+            : <Redirect to='/' />
+            }
+            </>
         )
     }
 
@@ -42,4 +62,4 @@ class Login extends Component {
         }
     }
 
-export default withRouter(connect(mapStateToProps, ))
+export default withRouter(connect(mapStateToProps, { login, getCurrentUser })(Login))
