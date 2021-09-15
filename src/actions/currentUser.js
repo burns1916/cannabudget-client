@@ -5,7 +5,7 @@ import {
     COMPLETE_AUTH
 } from '../actionTypes'
 
-const URL = 'https://cannabudget-api.herokuapp.com/'
+const URL = 'https://cannabudget-api.herokuapp.com'
 
 export const login = (credentials, history) => {
     return dispatch => {
