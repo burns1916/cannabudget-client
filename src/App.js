@@ -1,4 +1,7 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
+import Home from './containers/Home'
+import Login from './components/Login'
+import Signup from './components/Signup'
 import classes from './App.module.css';
 import Header from './components/Header'
 import Balance from './components/Balance'
@@ -9,16 +12,18 @@ import ExpenseList from './components/ExpenseList'
 
 
 function App() {
-
+  const history = useHistory();
   return(
-    <Router>
-      <Header />
-      {/* <Balance /> */}
-      {/* <AddIncomeTransaction /> */}
-      {/* <AddExpenseTransaction /> */}
-      {/* <IncomeList /> */}
-      {/* <ExpenseList /> */}
-    </Router>
+    <div>
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path='/login' component={Login} history={history} />
+          <Route exact path='/signup' component={Signup} history={history} />
+          <Route exact path='/' component={Home} history={history} />
+        </Switch>
+      </Router>
+    </div>
   )
 }
 
