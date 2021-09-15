@@ -12,7 +12,6 @@ class Signup extends Component {
     state = {
         username: '',
         password: '',
-        name: '', 
     }
 
     onChange = e => {
@@ -26,7 +25,6 @@ class Signup extends Component {
         this.setState({
             username: '',
             password: '',
-            name: '',
         })
     }
 
@@ -35,7 +33,7 @@ class Signup extends Component {
             <>
             { !this.props.loggedIn ?
             <div>
-                <form onsubmit={this.onSubmit}>
+                <form onSubmit={this.onSubmit}>
                     <div>
                         <h2>Signup</h2>
                     </div>
@@ -44,9 +42,6 @@ class Signup extends Component {
                     </div>
                     <div>
                         <input placeholder="password" value={this.state.password} name="password" type="password" onChange={this.onChange} />
-                    </div>
-                    <div>
-                        <input placeholder="name" value={this.state.name} name="name" type="text" onChange={this.onChange} />
                     </div>
                     <div>
                         <input type="submit" value="Signup" />

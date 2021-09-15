@@ -5,7 +5,8 @@ import {
     COMPLETE_AUTH
 } from '../actionTypes'
 
-const URL = 'https://cannabudget-api.herokuapp.com'
+// const URL = 'https://cannabudget-api.herokuapp.com'
+const URL = 'http://localhost:3001'
 
 export const login = (credentials, history) => {
     return dispatch => {
@@ -13,7 +14,7 @@ export const login = (credentials, history) => {
             credentials: "include",
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(credentials)
         })
@@ -65,7 +66,8 @@ export const getCurrentUser = () => {
             credentials: "include",
             method: "GET",
             headers: {
-                "Content-Type": "application/json"
+                "Accept": "application/json",
+                "Content-Type": "application/json",
             },
         })
         .then(resp => resp.json())
