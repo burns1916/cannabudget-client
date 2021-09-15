@@ -3,6 +3,8 @@ import Home from './containers/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import NavBar from './components/NavBar'
+import PrivateRoute from './containers/PrivateRoute'
+import MyProfile from './containers/MyProfile'
 import classes from './App.module.css';
 import Balance from './components/Balance'
 import AddIncomeTransaction from './components/AddIncomeTransaction'
@@ -20,6 +22,7 @@ function App() {
         <Switch>
           <Route exact path='/login' component={Login} history={history} />
           <Route exact path='/signup' component={Signup} history={history} />
+          <PrivateRoute exact path='/myprofile' component={MyProfile} history={history} />
           <Route exact path='/' component={Home} history={history} />
         </Switch>
       </Router>
