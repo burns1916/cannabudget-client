@@ -3,7 +3,7 @@ import {
     CLEAR_CURRENT_USER,
     BEGIN_AUTH,
     COMPLETE_AUTH
-} from '../action/Types'
+} from '../actionTypes'
 
 const URL = 'https://cannabudget-api.herokuapp.com/'
 

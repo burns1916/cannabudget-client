@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { login, getCurrentUser } from '../action/currentUser.js';
+import { login, getCurrentUser } from '../actions/currentUser';
 import { withRouter, Redirect } from 'react-router-dom';
 
 class Login extends Component {
@@ -33,7 +33,7 @@ class Login extends Component {
             <>
             { !this.props.loggedIn ?
             <div>
-                <form className={classes.formContainer} onSubmit={this.onSubmit}>
+                <form onSubmit={this.onSubmit}>
                     <div>
                         <h2>Login</h2>
                     </div>

@@ -25,7 +25,7 @@ class Signup extends Component {
         this.props.signup(this.state, this.props.history)
         this.setState({
             username: '',
-            password: '';
+            password: '',
             name: '',
         })
     }
@@ -35,7 +35,7 @@ class Signup extends Component {
             <>
             { !this.props.loggedIn ?
             <div>
-                <form className={classes.userForm} onsubmit={this.onSubmit}>
+                <form onsubmit={this.onSubmit}>
                     <div>
                         <h2>Signup</h2>
                     </div>
@@ -66,4 +66,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default withRouter(connect(mapStateToProps { signup, getCurrentUser })(Signup))
+export default withRouter(connect(mapStateToProps, { signup, getCurrentUser })(Signup))

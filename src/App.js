@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router
 import Home from './containers/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import NavBar from './components/NavBar'
 import classes from './App.module.css';
-import Header from './components/Header'
 import Balance from './components/Balance'
 import AddIncomeTransaction from './components/AddIncomeTransaction'
 import AddExpenseTransaction from './components/AddExpenseTransaction'
