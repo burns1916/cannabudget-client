@@ -27,7 +27,7 @@ export const login = (credentials, history) => {
                     type: SET_CURRENT_USER,
                     user: response
                 })
-                history.push('/')
+                // history.push('/')
             }
         })
         .catch(console.log)
@@ -46,6 +46,7 @@ export const signup = (credentials, history) => {
         })
         .then(resp => resp.json())
         .then(response => {
+            debugger
             if (response.error) {
                 alert(response.error)
             } else {
@@ -66,7 +67,6 @@ export const getCurrentUser = () => {
             credentials: "include",
             method: "GET",
             headers: {
-                "Accept": "application/json",
                 "Content-Type": "application/json",
             },
         })

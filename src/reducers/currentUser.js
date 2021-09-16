@@ -8,7 +8,7 @@ import {
 export function currentUserReducer(state = { currentUser: {}, authComplete: false }, action) {
     switch(action.type) {
         case SET_CURRENT_USER:
-            return{
+            return {
                 ...state,
                 currentUser: action.user,
             }
