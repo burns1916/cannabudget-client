@@ -9,6 +9,12 @@ const ADD_INCOME = "ADD_INCOME"
 const DELETE_INCOME = "DELETE_INCOME"
 const ADD_FARM = "ADD_FARM"
 const DELETE_FARM = "DELETE_FARM"
+const EDIT_FARM = "EDIT_FARM"
+const GET_FARMS = "GET_FARMS"
+const SET_FARM = "SET_FARM"
+const UNSET_FARM = "UNSET_FARM"
+
+
 
 
 export{
@@ -23,4 +29,8 @@ export{
     DELETE_INCOME,
     ADD_FARM,
     DELETE_FARM,
+    EDIT_FARM,
+    GET_FARMS,
+    SET_FARM,
+    UNSET_FARM,
 }
