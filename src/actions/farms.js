@@ -24,3 +24,18 @@ export const getFarms = () => {
         }))
     }
 }
+
+export const setFarm = (farmId) => {
+    return dispatch => {
+        fetch(`${FARM_URL}/${farmId}`, {
+            credentials: "include"
+        })
+        .then(resp => resp.json())
+        .then(farm => dispatch({
+            type: SET_FARM,
+            farm
+        }))
+    }
+}
+
+export const unsetFarm = () => ({ type: UNSET_FARM })
