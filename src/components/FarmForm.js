@@ -2,7 +2,7 @@ import React from "react";
 
 const FarmForm = props => {
 
-    const { name, location, total } = props
+    const { name, location, total, onChange, onSubmit } = props
 
     return (
         <div>

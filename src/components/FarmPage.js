@@ -1,6 +1,6 @@
 import React { Component } from "react";
 import { connect } from "react-redux";
-import { setFarm, unsetFarm} from '../actions/farms'
+import { setFarm, unsetFarm } from '../actions/farms'
 
 class FarmPage extends Component {
 
@@ -14,12 +14,12 @@ class FarmPage extends Component {
     }
 
     render() {
-        const { name, location, yield} = this.props
+        const { name, location, total} = this.props
         return (
             <>
                 <h2>Farm Name: { name }</h2>
                 <h3>Location: { location } </h3>
-                <h4>Current Total Yield: { yield }</h4>
+                <h4>Current Total Yield: { total }</h4>
             </>
         )
     }

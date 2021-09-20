@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getFarms } from "../actions/farms";
 import Farm from "../components/Farm";
-import { withRouter } from 'react-redux-dom';
+import { withRouter } from 'react-router-dom';
 import FarmForm from "../components/FarmForm";
 import { addFarm, editFarm } from '../actions/farms';
 
@@ -45,7 +45,7 @@ class FarmContainer extends Component {
     }
     
     componentDidMount(){
-        this.props.getSightings()
+        this.props.getFarms()
     }
 
     renderMyFarms = () => {

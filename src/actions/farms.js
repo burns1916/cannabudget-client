@@ -39,3 +39,86 @@ export const setFarm = (farmId) => {
 }
 
 export const unsetFarm = () => ({ type: UNSET_FARM })
+
+export const addFarm = (farmData) => {
+    return dispatch => {
+        const sendableFarmData = {
+            name: farmData.name,
+            location: farmData.location,
+            total: farmData.total,
+        }
+        return fetch(FARM_URL, {
+            credentials: "include",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(sendableFarmData),
+        })
+        .then(response => response.json())
+        .then(farm => {
+            if (farm.error) {
+                alert(farm.error)
+            } else {
+                dispatch ({
+                    type: ADD_FARM,
+                    farm
+                })
+                dispatch(getCurrentUser())
+            }
+        })
+        .catch((error) => {
+            console.log('Error:', error)
+        });
+    }
+}
+
+export const deleteFarm = (farmId) => {
+    return (dispatch) => {
+        return fetch(`${FARM_URL}/${farmId}`, {
+            credentials: "include",
+            method: "DELETE",
+        })
+        .then(resp => resp.json())
+        .then(() => {
+            dispatch({
+                type: DELETE_FARM,
+                farmId
+            })
+            dispatch(getCurrentUser())
+        })
+    }
+}
+
+export const editFarm = (farmData) => {
+    return dispatch => {
+        const sendableFarmData = {
+            name: farmData.name,
+            location: farmData.location,
+            total: farmData.total,
+        }
+        return fetch(`${FARM_URL}/${farmData.id}`, {
+            credentials: "include",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(sendableFarmData),
+        })
+        .then(response => response.json())
+        .then(farm => {
+            if (farm.error) {
+                alert(farm.error)
+            } else {
+                dispatch ({
+                    type: EDIT_FARM,
+                    farm
+                })
+                dispatch(getCurrentUser())
+            }
+        })
+        .catch((error) => {
+            console.log('Error:', error)
+        });
+    }
+}
