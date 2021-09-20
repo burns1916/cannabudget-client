@@ -2,7 +2,7 @@ import React from "react";
 
 const FarmForm = props => {
 
-    const { name, location, yield } = this.props
+    const { name, location, total } = props
 
     return (
         <div>
@@ -12,7 +12,7 @@ const FarmForm = props => {
             <label>Location:</label>
             <input placeholder="location" value={location} type="text" name="location" onChange={onChange} />
             <label>Yield:</label>
-            <input placeholder="yield" value={yield} type="text" name="yield" onChange={onChange} />
+            <input placeholder="total" value={total} type="text" name="total" onChange={onChange} />
         </form>
         </div>
     )

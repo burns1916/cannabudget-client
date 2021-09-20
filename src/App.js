@@ -5,6 +5,7 @@ import Signup from './components/Signup'
 import NavBar from './components/NavBar'
 import PrivateRoute from './containers/PrivateRoute'
 import MyProfile from './containers/MyProfile'
+import FarmContainer from './containers/FarmContainer';
 import classes from './App.module.css';
 import Balance from './components/Balance'
 import AddIncomeTransaction from './components/AddIncomeTransaction'
@@ -23,6 +24,7 @@ function App() {
           <Route exact path='/login' component={Login} history={history} />
           <Route exact path='/signup' component={Signup} history={history} />
           <PrivateRoute exact path='/myprofile' component={MyProfile} history={history} />
+          <PrivateRoute exact path='/farms' component={FarmContainer} history={history} />
           <Route exact path='/' component={Home} history={history} />
         </Switch>
       </Router>
