@@ -9,12 +9,15 @@ import { addFarm, editFarm } from '../actions/farms';
 class FarmContainer extends Component {
 
     state = {
+        modal: false,
         form: {
             name: '',
             location: '',
             total: '',
         }
     }
+
+    toggleModal = () => this.setState({modal: !this.state.modal})
 
     onChange = (event) => {
         const target = event.target;
@@ -36,6 +39,7 @@ class FarmContainer extends Component {
             this.props.addFarm(this.state.form)
         }
         this.setState({
+            modal: false,
             form: {
                 name: '',
                 location: '',
@@ -48,10 +52,32 @@ class FarmContainer extends Component {
         this.props.getFarms()
     }
 
+    openNewFarmForm = () => this.setState({
+        modal: true,
+        form: {
+            name: '',
+            location: '',
+            total: '',
+        }
+    })
+
+    populateForm = (farm) => this.setState({
+        modal: true,
+        form: {
+            name: farm.name,
+            location: farm.location,
+            total: farm.total,
+        }
+    })
+
     renderMyFarms = () => {
         return (
             <>
-                <Farm/>
+            <button onClick={this.openNewFarmForm}>
+                New Farm
+            </button>
+            {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map(farm => <Farm key={farm.id} populateForm={this.populateForm} {...farm} />)}
+            <FarmForm toggle={this.toggleModal} {...this.state.form} display={this.state.modal} onChange={this.onChange} onSubmit={this.onSubmit}/>
             </>
         )
     }

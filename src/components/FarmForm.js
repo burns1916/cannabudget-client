@@ -13,6 +13,7 @@ const FarmForm = props => {
             <input placeholder="location" value={location} type="text" name="location" onChange={onChange} />
             <label>Yield:</label>
             <input placeholder="total" value={total} type="text" name="total" onChange={onChange} />
+            <input type="submit" value="Submit" />
         </form>
         </div>
     )
