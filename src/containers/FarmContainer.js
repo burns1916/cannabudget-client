@@ -51,7 +51,7 @@ class FarmContainer extends Component {
     renderMyFarms = () => {
         return (
             <>
-                {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map(farm => <Farm key={farm.id} {...farm} /> )}
+                <Farm/>
             </>
         )
     }
@@ -59,7 +59,7 @@ class FarmContainer extends Component {
     render() {
         return(
             <div>
-                {this.props.location.pathname === '/myprofile' ? this.renderMyFarms() : "Please Login" }
+                {this.props.location.pathname === '/farms' ? this.renderMyFarms() : "Please Login" }
             </div>
         )
     }

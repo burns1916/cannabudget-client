@@ -3,22 +3,18 @@ import { deleteFarm } from '../actions/farms';
 
 const Farm = props => {
 
-    const onClick = () => {
+   const onClick = () => {
         props.deleteFarm(props.id)
+   }
 
         return(
             <div>
             <h2>{props.name}</h2>
             <h2>{props.location}</h2>
-            <h3>{props.total}</h3>
-            <button onClick={onClick}>Delete</button> 
+            <h3>{props.total}</h3> 
+            <button onClick={onClick}>Delete</button>
             </div>   
         )
-    }
-
-    <div>
-
-    </div>
 }
 
 export default connect(null, { deleteFarm })(Farm)
