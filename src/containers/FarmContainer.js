@@ -85,7 +85,7 @@ class FarmContainer extends Component {
     render() {
         return(
             <div>
-                {this.props.location.pathname === '/myprofile' ? this.renderMyFarms() : "Please Login" }
+                {this.props.location.pathname === '/farms' ? this.renderMyFarms() : "Please Login" }
             </div>
         )
     }

@@ -27,7 +27,7 @@ export const login = (credentials, history) => {
                     type: SET_CURRENT_USER,
                     user: response
                 })
-                history.push('/')
+                history.push('/myprofile')
             }
         })
         .catch(console.log)
