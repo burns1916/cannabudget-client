@@ -9,9 +9,9 @@ const Farm = props => {
 
         return(
             <div>
-            <h2>{props.name}</h2>
-            <h2>{props.location}</h2>
-            <h3>{props.total}</h3> 
+            <h2>Name: {props.name}</h2>
+            <h3>Location: {props.location}</h3>
+            <p>Total Yield: {props.total}</p> 
             <button onClick={onClick}>Delete</button>
             </div>   
         )

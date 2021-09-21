@@ -76,8 +76,8 @@ class FarmContainer extends Component {
             <button onClick={this.openNewFarmForm}>
                 New Farm
             </button>
-            {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map(farm => <Farm key={farm.id} populateForm={this.populateForm} {...farm} />)}
             <FarmForm toggle={this.toggleModal} {...this.state.form} display={this.state.modal} onChange={this.onChange} onSubmit={this.onSubmit}/>
+            {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map(farm => <Farm key={farm.id} populateForm={this.populateForm} {...farm} />)}
             </>
         )
     }
@@ -85,7 +85,7 @@ class FarmContainer extends Component {
     render() {
         return(
             <div>
-                {this.props.location.pathname === '/farms' ? this.renderMyFarms() : "Please Login" }
+                {this.props.location.pathname === '/myprofile' ? this.renderMyFarms() : "Please Login" }
             </div>
         )
     }
