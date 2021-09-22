@@ -6,12 +6,6 @@ import NavBar from './components/NavBar'
 import PrivateRoute from './containers/PrivateRoute'
 import MyProfile from './containers/MyProfile'
 import FarmContainer from './containers/FarmContainer';
-import classes from './App.module.css';
-import Balance from './components/Balance'
-import AddIncomeTransaction from './components/AddIncomeTransaction'
-import AddExpenseTransaction from './components/AddExpenseTransaction'
-import IncomeList from './components/IncomeList'
-import ExpenseList from './components/ExpenseList'
 
 
 function App() {
