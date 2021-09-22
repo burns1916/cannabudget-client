@@ -11,7 +11,6 @@ const Farm = props => {
             <div>
             <h2>Name: {props.name}</h2>
             <h3>Location: {props.location}</h3>
-            <p>Total Yield: {props.total}</p> 
             <button onClick={onClick}>Delete</button>
             </div>   
         )

@@ -13,7 +13,6 @@ class FarmContainer extends Component {
         form: {
             name: '',
             location: '',
-            total: '',
         }
     }
 
@@ -43,7 +42,6 @@ class FarmContainer extends Component {
             form: {
                 name: '',
                 location: '',
-                total: '',
             }
         })
     }
@@ -57,7 +55,6 @@ class FarmContainer extends Component {
         form: {
             name: '',
             location: '',
-            total: '',
         }
     })
 
@@ -66,7 +63,6 @@ class FarmContainer extends Component {
         form: {
             name: farm.name,
             location: farm.location,
-            total: farm.total,
         }
     })
 

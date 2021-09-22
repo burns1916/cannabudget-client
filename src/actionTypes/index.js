@@ -13,6 +13,12 @@ const EDIT_FARM = "EDIT_FARM"
 const GET_FARMS = "GET_FARMS"
 const SET_FARM = "SET_FARM"
 const UNSET_FARM = "UNSET_FARM"
+const ADD_CROP = "ADD_CROP"
+const DELETE_CROP = "DELETE_CROP"
+const EDIT_CROP = "EDIT_CROP"
+const GET_CROPS = "GET_CROPS"
+const SET_CROP = "SET_CROP"
+const UNSET_CROP = "UNSET_CROP"
 
 
 
@@ -33,4 +39,10 @@ export{
     GET_FARMS,
     SET_FARM,
     UNSET_FARM,
+    ADD_CROP,
+    DELETE_CROP,
+    EDIT_CROP,
+    GET_CROPS,
+    SET_CROP,
+    UNSET_CROP,
 }

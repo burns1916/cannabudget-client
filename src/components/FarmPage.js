@@ -19,7 +19,6 @@ class FarmPage extends Component {
             <>
                 <h2>Farm Name: { name }</h2>
                 <h3>Location: { location } </h3>
-                <h4>Current Total Yield: { total }</h4>
             </>
         )
     }
