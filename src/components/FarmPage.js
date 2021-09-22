@@ -14,7 +14,7 @@ class FarmPage extends Component {
     }
 
     render() {
-        const { name, location, total} = this.props
+        const { name, location} = this.props
         return (
             <>
                 <h2>Farm Name: { name }</h2>
