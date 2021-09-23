@@ -27,7 +27,7 @@ class FarmContainer extends Component {
 
     onFarmChange = (event) => {
         const target = event.target;
-        const value = target.value;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
         this.setState({ farmForm:
             {
@@ -122,6 +122,7 @@ class FarmContainer extends Component {
     renderMyFarms = () => {
         return (
             <>
+            <button onClick={this.openNewFarmForm}>New Farm</button>
             <FarmForm toggle={this.toggleModal} {...this.state.farmForm} display={this.state.modal} onChange={this.onFarmChange} onSubmit={this.onFarmSubmit}/>
             <CropForm toggle={this.toggleModal} {...this.state.cropForm} display={this.state.modal} onChange={this.onCropChange} onSubmit={this.onCropSubmit}/>
             {/* {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map(farm => <Farm key={farm.id} populateFarmForm={this.populateFarmForm} {...farm} />)} */}

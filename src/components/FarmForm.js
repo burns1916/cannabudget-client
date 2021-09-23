@@ -2,10 +2,12 @@ import React from "react";
 
 const FarmForm = props => {
 
-    const { name, location, onChange, onSubmit } = props
+    const display = props.display ? "block" : "none"
+    const { name, location, toggle, onChange, onSubmit } = props
 
     return (
-        <div>
+        <div id="myModal" style={{ display }}>
+        <span onClick={toggle}>&times;</span>
         <form onSubmit={onSubmit}>
             <label>Farm Name:</label>
             <input placeholder="name" value={name} type="text" name="name" onChange={onChange} />
