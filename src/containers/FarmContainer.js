@@ -58,7 +58,7 @@ class FarmContainer extends Component {
         }
         this.setState({
             modal: false,
-            form: {
+            farmForm: {
                 name: '',
                 location: '',
             }
@@ -68,13 +68,13 @@ class FarmContainer extends Component {
     onCropSubmit = (e) => {
         e.preventDefault();
         if (this.state.cropForm.id) {
-            this.props.editFarm(this.state.cropForm)
+            this.props.editCrop(this.state.cropForm)
         } else {
-            this.props.addFarm(this.state.cropForm)
+            this.props.addCrop(this.state.cropForm)
         }
         this.setState({
             modal: false,
-            form: {
+            cropForm: {
                 strain_name: '',
                 harvest_date: '',
             }
@@ -123,7 +123,8 @@ class FarmContainer extends Component {
         return (
             <>
             <FarmForm toggle={this.toggleModal} {...this.state.farmForm} display={this.state.modal} onChange={this.onFarmChange} onSubmit={this.onFarmSubmit}/>
-            {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map(farm => <Farm key={farm.id} populateFarmForm={this.populateFarmForm} {...farm} />)}
+            <CropForm toggle={this.toggleModal} {...this.state.cropForm} display={this.state.modal} onChange={this.onCropChange} onSubmit={this.onCropSubmit}/>
+            {/* {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map(farm => <Farm key={farm.id} populateFarmForm={this.populateFarmForm} {...farm} />)} */}
             </>
         )
     }
@@ -141,7 +142,7 @@ const mapStateToProps = state => {
     return {
         currentUser: state.currentUser.currentUser,
         farms: state.farms.farms,
-        crops: state.crops.crops,
+        ...state.farms.crops,
     }
 }
 
