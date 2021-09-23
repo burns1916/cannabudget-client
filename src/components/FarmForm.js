@@ -7,7 +7,7 @@ const FarmForm = props => {
 
     return (
         <div id="myModal" style={{ display }}>
-        <span onClick={toggle}>&times;</span>
+        <button onClick={toggle}>Close Farm Form</button>
         <form onSubmit={onSubmit}>
             <label>Farm Name:</label>
             <input placeholder="name" value={name} type="text" name="name" onChange={onChange} />
