@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Farm from "../components/Farm";
 import { withRouter } from 'react-router-dom';
 import FarmForm from "../components/FarmForm";
+import FarmPage from "../components/FarmPage";
 import { getFarms, addFarm, editFarm } from '../actions/farms';
 
 class FarmContainer extends Component {
@@ -80,7 +81,7 @@ class FarmContainer extends Component {
     render() {
         return(
             <div>
-                {this.props.location.pathname === '/farms' ? this.renderMyFarms() : "Please Login" }
+                {this.props.farms.selectedFarm !== null ? <FarmPage key={this.props.selectedFarm} /> : this.renderMyFarms() }
             </div>
         )
     }
@@ -90,6 +91,7 @@ const mapStateToProps = state => {
     return {
         currentUser: state.currentUser.currentUser,
         farms: state.farms.farms,
+        ...state.farms.selectedFarm,
     }
 }
 
