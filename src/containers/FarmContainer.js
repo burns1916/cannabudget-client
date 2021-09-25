@@ -67,6 +67,7 @@ class FarmContainer extends Component {
             <button onClick={this.openNewFarmForm}>New Farm</button>
             <FarmForm toggle={this.toggleFarmModal} {...this.state.farmForm} display={this.state.farmModal} onChange={this.onFarmChange} onSubmit={this.onFarmSubmit}/>
             <Farms/>
+            <Route path={`${match.url}/:farmId`} component={FarmPage} />
             </>
         )
     }

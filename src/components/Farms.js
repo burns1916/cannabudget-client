@@ -16,7 +16,7 @@ class Farms extends Component {
             <div>
             <h2>Name: {farm.name}</h2>
             <h3>Location: {farm.location}</h3>
-            <Link key={farm.id} to={`/farms/${farm.id}`}>Manage Crops</Link>
+            <Link key={farm.id} to={`/farms/${farm.id}`}>Manage Farm</Link>
             <button onClick={this.onClick.bind(this, farm.id)}>Delete</button>
             </div>
           )}
