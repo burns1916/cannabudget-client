@@ -84,7 +84,7 @@ class CropContainer extends Component{
 const mapStateToProps = state => {
     return {
         currentUser: state.currentUser.currentUser,
-        crops: state.crops.crops,
+        farms: state.crops,
     }
 }
 
