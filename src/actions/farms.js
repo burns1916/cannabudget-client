@@ -1,8 +1,8 @@
 import {
     ADD_FARM,
     DELETE_FARM,
-    GET_FARMS,
     EDIT_FARM,
+    GET_FARMS,
     SET_FARM,
     UNSET_FARM,
     ADD_CROP,
@@ -104,7 +104,7 @@ export const editFarm = (farmData) => {
         }
         return fetch(`${FARM_URL}/${farmData.id}`, {
             credentials: "include",
-            method: "PATCH",
+            method: "GET",
             headers: {
                 "Content-Type": "application/json",
             },

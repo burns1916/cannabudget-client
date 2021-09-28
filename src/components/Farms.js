@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteFarm } from '../actions/farms';
-import { Link } from 'react-router-dom';
 
 class Farms extends Component {
 
-     onClick = (id) => {
+     onClickDelete = (id) => {
         this.props.deleteFarm(id)
      }
-
+     
      render() {
         return(
             <>
-          {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map((farm) =>
-            <div>
+          {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map((farm, pos) =>
+            <div key={pos}>
             <h2>Name: {farm.name}</h2>
             <h3>Location: {farm.location}</h3>
-            <Link key={farm.id} to={`/farms/${farm.id}`}>Manage Farm</Link>
-            <button onClick={this.onClick.bind(this, farm.id)}>Delete</button>
+            <button onClick={this.onClickDelete.bind(this, farm.id)}>Delete</button>
             </div>
           )}
             </>   

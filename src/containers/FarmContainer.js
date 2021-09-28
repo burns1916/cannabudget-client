@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import Farms from "../components/Farms";
 import FarmForm from "../components/FarmForm";
 import FarmPage from "../components/FarmPage";
-import { getFarms, addFarm, editFarm } from '../actions/farms';
+import { getFarms, addFarm, editFarm} from '../actions/farms';
 
 class FarmContainer extends Component {
 
