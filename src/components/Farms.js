@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 const Farms = props => {
 
      const onClickDelete = () => {
-        this.props.deleteFarm(props.id)
+        props.deleteFarm(props.id)
      }
      
         return(

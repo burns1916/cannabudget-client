@@ -14,11 +14,12 @@ class FarmPage extends Component {
     }
 
     render() {
+        const {name, location} = this.props
         return (
-            <>
-                <h2>Farm Name:</h2>{this.props.name}
-                <h3>Location:</h3> {this.props.location}
-            </>
+            <div>
+                <h2>Farm Name:</h2>{JSON.stringify(name)}
+                <h3>Location:</h3> {JSON.stringify(location)}
+            </div>
         )
     }
 }
