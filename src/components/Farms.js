@@ -1,26 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { deleteFarm } from '../actions/farms';
+import { NavLink } from 'react-router-dom';
 
-class Farms extends Component {
+const Farms = props => {
 
-     onClickDelete = (id) => {
-        this.props.deleteFarm(id)
+     const onClickDelete = () => {
+        this.props.deleteFarm(props.id)
      }
      
-     render() {
         return(
-            <>
-          {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map((farm, pos) =>
-            <div key={pos}>
-            <h2>Name: {farm.name}</h2>
-            <h3>Location: {farm.location}</h3>
-            <button onClick={this.onClickDelete.bind(this, farm.id)}>Delete</button>
+            <div>
+            <h2>Name: {props.name}</h2>
+            <h3>Location: {props.location}</h3>
+            <button onClick={onClickDelete}>Delete</button>
+            <NavLink to={`/farms/${props.id}`}>Add Crops</NavLink>
             </div>
-          )}
-            </>   
-        )
-     }
+          );
 }
 
 const mapStateToProps = state => {

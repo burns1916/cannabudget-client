@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Route } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
 import Farms from "../components/Farms";
 import FarmForm from "../components/FarmForm";
-import FarmPage from "../components/FarmPage";
 import { getFarms, addFarm, editFarm} from '../actions/farms';
 
 class FarmContainer extends Component {
@@ -66,7 +64,7 @@ class FarmContainer extends Component {
             <>
             <button onClick={this.openNewFarmForm}>New Farm</button>
             <FarmForm toggle={this.toggleFarmModal} {...this.state.farmForm} display={this.state.farmModal} onChange={this.onFarmChange} onSubmit={this.onFarmSubmit}/>
-            <Farms/>
+            {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map(farm => <Farms key={farm.id} populateForm={this.populateForm} {...farm} />)}
             </>
         )
     }
