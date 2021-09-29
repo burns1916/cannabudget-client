@@ -4,6 +4,15 @@ import { setFarm, unsetFarm } from '../actions/farms'
 
 class FarmPage extends Component {
 
+    componentDidMount() {
+        const id = this.props.match.params.id
+        this.props.setFarm(id)
+    }
+
+    componentDidUnount() {
+        this.props.unsetFarm()
+    }
+
     render() {
         return (
             <>
@@ -15,8 +24,8 @@ class FarmPage extends Component {
 }
 
 const mapStateToProps = (state) => ({
+    ...state.farms.selectedFarm,
     currentUser: state.currentUser.currentUser,
-    farms: state.farms.farms,
 })
 
 export default connect(mapStateToProps, { setFarm, unsetFarm })(FarmPage)
