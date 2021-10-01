@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
-import { getCrops, addCrop, editCrop } from '../actions/farms';
+import { getCrops, addCrop, editCrop } from '../actions/crops';
 import Crop from '../components/Crop';
 import CropForm from '../components/CropForm';
 
@@ -84,7 +84,7 @@ class CropContainer extends Component{
 const mapStateToProps = state => {
     return {
         currentUser: state.currentUser.currentUser,
-        farms: state.crops,
+        crops: state.crops.crops,
     }
 }
 

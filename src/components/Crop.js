@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { deleteCrop } from '../actions/farms';
+import { deleteCrop } from '../actions/crops';
 
 const Crop = props => {
 

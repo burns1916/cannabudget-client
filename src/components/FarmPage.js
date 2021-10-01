@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setFarm, unsetFarm } from '../actions/farms'
+import CropContainer from "../containers/CropContainer";
 
 class FarmPage extends Component {
 
@@ -19,6 +20,7 @@ class FarmPage extends Component {
             <div>
                 <h2>Farm Name:</h2>{JSON.stringify(name)}
                 <h3>Location:</h3> {JSON.stringify(location)}
+                <CropContainer />
             </div>
         )
     }
@@ -27,6 +29,7 @@ class FarmPage extends Component {
 const mapStateToProps = (state) => ({
     ...state.farms.selectedFarm,
     currentUser: state.currentUser.currentUser,
+    crops: state.crops.crops,
 })
 
 export default connect(mapStateToProps, { setFarm, unsetFarm })(FarmPage)
