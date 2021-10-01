@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setFarm, unsetFarm } from '../actions/farms'
 import CropContainer from "../containers/CropContainer";
+import Crop from "./Crop";
 
 class FarmPage extends Component {
 
@@ -22,6 +23,7 @@ class FarmPage extends Component {
                 <h3>Location:</h3> {JSON.stringify(location)}
                 <br />
                 <CropContainer />
+                <Crop />
             </div>
         )
     }

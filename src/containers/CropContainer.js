@@ -59,7 +59,7 @@ class CropContainer extends Component{
     
     populateCropForm = (crop) => this.setState({
         cropModal: true,
-        farmForm: {
+        cropForm: {
             strain_name: crop.strain_name,
             harvest_date: crop.harvest_date,
         }

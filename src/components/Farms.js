@@ -19,11 +19,4 @@ const Farms = props => {
           );
 }
 
-const mapStateToProps = state => {
-     return {
-          currentUser: state.currentUser.currentUser,
-          farms: state.farms.farms,
-      } 
-}
-
-export default connect(mapStateToProps, { deleteFarm })(Farms)
+export default connect(null, { deleteFarm })(Farms)

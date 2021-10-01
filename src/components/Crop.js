@@ -1,10 +1,11 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { deleteCrop } from '../actions/crops';
 
 const Crop = props => {
 
    const onClick = () => {
-        props.deleteFarm(props.id)
+        props.deleteCrop(props.id)
    }
 
         return(
@@ -15,5 +16,7 @@ const Crop = props => {
             </div>   
         )
 }
+
+
 
 export default connect(null, { deleteCrop })(Crop)
