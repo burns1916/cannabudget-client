@@ -25,7 +25,7 @@ export function cropsReducer(state = initialState, action) {
         case UNSET_CROP:
             return {...state, selectedCrop: null}
         case DELETE_CROP:
-            return {...state, selectedfarm: action.crop}
+            return {...state, crops: [...state.crops.filter(crop => crop.id !== action.cropId)]}
         default:
             return state
     }

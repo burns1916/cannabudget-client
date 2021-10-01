@@ -65,18 +65,12 @@ class CropContainer extends Component{
         }
     })
 
-    renderMyCrops = () => {
-        <>
-            <button onClick={this.openNewCropForm}>New Crop</button>
-            <CropForm toggle={this.toggleCropModal} {...this.state.cropForm} display={this.state.cropModal} onChange={this.onCropChange} onSubmit={this.onCropSubmit}/>
-        </>
-    }
-
     render() {
         return(
-            <div>
-            {this.props.location.pathname === '/crops' ? this.renderMyCrops() : "Please Login"}
-            </div>
+            <>
+                <button onClick={this.openNewCropForm}>New Crop</button>
+                <CropForm toggle={this.toggleCropModal} {...this.state.cropForm} display={this.state.cropModal} onChange={this.onCropChange} onSubmit={this.onCropSubmit}/>
+             </>
         )
     }   
 }

@@ -20,6 +20,7 @@ class FarmPage extends Component {
             <div>
                 <h2>Farm Name:</h2>{JSON.stringify(name)}
                 <h3>Location:</h3> {JSON.stringify(location)}
+                <br />
                 <CropContainer />
             </div>
         )
