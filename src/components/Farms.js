@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { deleteFarm } from '../actions/farms';
 import { NavLink } from 'react-router-dom';
 
+
 const Farms = props => {
 
      const onClickDelete = () => {

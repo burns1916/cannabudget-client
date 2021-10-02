@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logout from "./Logout";
 
 const NavBar = props => {
@@ -9,21 +9,21 @@ const NavBar = props => {
             {props.loggedIn ?
             <>
             <div>
-                <NavLink to="/">
+                <Link to="/">
                     <span>
                         Home
                     </span>
-                </NavLink>
-                <NavLink to="/farms">
+                </Link>
+                <Link to="/farms">
                     <span>
                         Farms
                     </span>
-                </NavLink>
-                <NavLink to="/myprofile">
+                </Link>
+                <Link to="/myprofile">
                     <span>
                         Profile
                     </span>
-                </NavLink>
+                </Link>
             </div>
             <div>
                 <Logout />
@@ -31,21 +31,21 @@ const NavBar = props => {
             </>
             :
             <div>
-                <NavLink to="/">
+                <Link to="/">
                     <span>
                         Home
                     </span>
-                </NavLink>
-                <NavLink to="/signup">
+                </Link>
+                <Link to="/signup">
                     <span>
                         Sign Up
                     </span>
-                </NavLink>
-                <NavLink to="/login">
+                </Link>
+                <Link to="/login">
                     <span>
                         Login
                     </span>
-                </NavLink>
+                </Link>
             </div>
             }
         </nav>
