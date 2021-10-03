@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setFarm, unsetFarm } from '../actions/farms'
-import CropContainer from "../containers/CropContainer";
-import Crop from "./Crop";
 import { NavLink } from 'react-router-dom';
 
 class FarmPage extends Component {
@@ -32,7 +30,6 @@ class FarmPage extends Component {
 const mapStateToProps = (state) => ({
     ...state.farms.selectedFarm,
     currentUser: state.currentUser.currentUser,
-    crops: state.crops.crops,
 })
 
 export default connect(mapStateToProps, { setFarm, unsetFarm })(FarmPage)
