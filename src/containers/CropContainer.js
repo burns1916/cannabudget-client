@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from 'react-router-dom';
+import { withRouter, usParams } from 'react-router-dom';
 import { getCrops, addCrop, editCrop } from '../actions/crops';
+import { getFarms } from '../actions/farms';
 import Crop from '../components/Crop';
 import CropForm from '../components/CropForm';
 
@@ -46,6 +47,7 @@ class CropContainer extends Component{
 
     componentDidMount(){
         this.props.getCrops()
+        this.props.getFarms()
     }
        
     openNewCropForm = () => this.setState({
@@ -65,10 +67,11 @@ class CropContainer extends Component{
         }
     })
 
+
     render() {
         return(
             <>
-                {this.state.name}
+                {JSON.stringify({this.props.farms.filter(farm => farm.id === this.props.match.id)})}
                 <button onClick={this.openNewCropForm}>New Crop</button>
                 <CropForm toggle={this.toggleCropModal} {...this.state.cropForm} display={this.state.cropModal} onChange={this.onCropChange} onSubmit={this.onCropSubmit}/>
              </>
@@ -85,5 +88,5 @@ const mapStateToProps = state => {
     }
 }
 
-export default withRouter(connect(mapStateToProps, { getCrops, addCrop, editCrop })(CropContainer))
+export default withRouter(connect(mapStateToProps, { getCrops, addCrop, editCrop, getFarms })(CropContainer))
 
