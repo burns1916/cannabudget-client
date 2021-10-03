@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setFarm, unsetFarm } from '../actions/farms'
 import CropContainer from "../containers/CropContainer";
 import Crop from "./Crop";
+import { NavLink } from 'react-router-dom';
 
 class FarmPage extends Component {
 
@@ -16,14 +17,13 @@ class FarmPage extends Component {
     }
 
     render() {
-        const {name, location} = this.props
+        const {name, location, id} = this.props
         return (
             <div>
                 <h2>Farm Name:</h2>{JSON.stringify(name)}
                 <h3>Location:</h3> {JSON.stringify(location)}
                 <br />
-                <CropContainer />
-                <Crop />
+                <NavLink to={`/farms/${id}/crops`}>Add Crops</NavLink>
             </div>
         )
     }

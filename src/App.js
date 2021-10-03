@@ -7,6 +7,7 @@ import PrivateRoute from './containers/PrivateRoute'
 import MyProfile from './containers/MyProfile'
 import FarmContainer from './containers/FarmContainer';
 import FarmPage from './components/FarmPage';
+import CropContainer from './containers/CropContainer';
 
 
 function App() {
@@ -19,8 +20,9 @@ function App() {
           <Route exact path='/login' component={Login} history={history} />
           <Route exact path='/signup' component={Signup} history={history} />
           <PrivateRoute exact path='/myprofile' component={MyProfile} history={history} />
-          <PrivateRoute path='/farms' component={FarmContainer} history={history} />
-          <PrivateRoute path='/farms/:id' component={FarmPage} history={history}/>
+          <PrivateRoute exact path='/farms' component={FarmContainer} history={history} />
+          <PrivateRoute exact path='/farms/:id' component={FarmPage} history={history}/>
+          <PrivateRoute exact path='/farms/:id/crops' component={CropContainer} history={history} />
           <Route exact path='/' component={Home} history={history} />
         </Switch>
       </Router>

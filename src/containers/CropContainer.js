@@ -68,6 +68,7 @@ class CropContainer extends Component{
     render() {
         return(
             <>
+                {this.state.name}
                 <button onClick={this.openNewCropForm}>New Crop</button>
                 <CropForm toggle={this.toggleCropModal} {...this.state.cropForm} display={this.state.cropModal} onChange={this.onCropChange} onSubmit={this.onCropSubmit}/>
              </>
@@ -77,6 +78,8 @@ class CropContainer extends Component{
 
 const mapStateToProps = state => {
     return {
+        farms: state.farms.farms,
+        ...state.farms.selectedFarm,
         currentUser: state.currentUser.currentUser,
         crops: state.crops.crops,
     }
