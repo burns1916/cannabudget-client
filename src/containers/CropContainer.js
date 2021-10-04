@@ -5,6 +5,7 @@ import { getCrops, addCrop, editCrop } from '../actions/crops';
 import { getFarms } from '../actions/farms';
 import Crop from '../components/Crop';
 import CropForm from '../components/CropForm';
+import Farms from "../components/Farms";
 
 
 class CropContainer extends Component{
@@ -72,9 +73,10 @@ class CropContainer extends Component{
     render() {
         return(
             <>
-                <p>{this.props.farms.filter(farm => farm.id === this.props.match.params.id).map(farm => {JSON.stringify(farm)})}</p>
+                {this.props.farms.filter(farm => farm.id === this.props.match.params.id).map(farm => <Farms key={farm.id} {...farm} />)}
+                {/* <p>{this.props.farms.filter(farm => farm.id === this.props.match.params.id).map(farm => {JSON.stringify(farm)})}</p>
                 <p>{JSON.stringify(this.props.match.params.id)}</p>
-                <p>{JSON.stringify(this.props.farms[0].name)}</p>
+                <p>{JSON.stringify(this.props.farms[0].name)}</p> */}
                 <button onClick={this.openNewCropForm}>New Crop</button>
                 <CropForm toggle={this.toggleCropModal} {...this.state.cropForm} display={this.state.cropModal} onChange={this.onCropChange} onSubmit={this.onCropSubmit}/>
              </>
