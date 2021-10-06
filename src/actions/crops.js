@@ -26,7 +26,7 @@ export const getCrops = () => {
 
 export const setCrop = (cropId) => {
     return dispatch => {
-        fetch(`${BASE_URL}/${cropId}`, {
+        fetch(`${CROP_URL}/${cropId}`, {
             credentials: "include",
         })
         .then(resp => resp.json())
