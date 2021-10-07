@@ -11,9 +11,9 @@ import { getCurrentUser } from './currentUser';
 const BASE_URL = 'http://localhost:3001'
 const CROP_URL = `${BASE_URL}/crops`
 
-export const getCrops = () => {
+export const getCrops = (farmId) => {
     return (dispatch) => {
-        fetch(CROP_URL, {
+        fetch(`${BASE_URL}/farms/${farmId}/crops`, {
             credentials: "include",
         })
         .then(resp => resp.json())
@@ -43,9 +43,9 @@ export const addCrop = (cropData) => {
     return dispatch => {
         const sendableCropData = {
             strain_name: cropData.strain_name,
-            harvest_date: cropData.harvest_date,
+            farm_id: cropData.farm_id,
         }
-    return fetch(CROP_URL, {
+    return fetch(`${BASE_URL}/farms/${cropData.farm_id}/crops`, {
         credentials: "include",
         method: "POST",
         headers: {

@@ -11,7 +11,6 @@ const Crop = props => {
         return(
             <div>
             <h2>Strain Name: {props.strain_name}</h2>
-            <h3>Harvest Date: {props.harvest_date}</h3>
             <button onClick={onClick}>Delete</button>
             </div>   
         )

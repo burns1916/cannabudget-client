@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
 import { getCrops, addCrop, editCrop } from '../actions/crops';
 import { getFarms } from '../actions/farms';
-import Crop from '../components/Crop';
+import Crops from '../components/Crops';
 import CropForm from '../components/CropForm';
-import FarmPage from "../components/FarmPage";
 
 
 class CropContainer extends Component{
@@ -13,7 +12,7 @@ class CropContainer extends Component{
         cropModal: false,
         cropForm: {
             strain_name: '',
-            harvest_date: '',
+            farm_id: parseInt(this.props.match.params.id),
         },
     }
 
@@ -42,13 +41,13 @@ class CropContainer extends Component{
             cropModal: false,
             cropForm: {
                 strain_name: '',
-                harvest_date: '',
+                farm_id: parseInt(this.props.match.params.id),
             }
         })
     }
 
     componentDidMount(){
-        this.props.getCrops()
+        this.props.getCrops(parseInt(this.props.match.params.id))
         this.props.getFarms()
     }
        
@@ -56,7 +55,7 @@ class CropContainer extends Component{
         cropModal: true,
         cropForm: {
             strain_name: '',
-            harvest_date: '',
+            farm_id: parseInt(this.props.match.params.id),
         }
     })
 
@@ -65,7 +64,7 @@ class CropContainer extends Component{
         cropModal: true,
         cropForm: {
             strain_name: crop.strain_name,
-            harvest_date: crop.harvest_date,
+            farm_id: parseInt(this.props.match.params.id),
         }
     })
 
@@ -73,9 +72,7 @@ class CropContainer extends Component{
         return(
             <>
                 {this.props.farms.filter(farm => farm.id === parseInt(this.props.match.params.id)).map((farm, pos) => <div key={pos}><h1>{farm.name}</h1> <h3>{farm.location}</h3></div>)}
-                {/* <p>{this.props.farms.filter(farm => farm.id === this.props.match.params.id).map(farm => {JSON.stringify(farm)})}</p>
-                <p>{JSON.stringify(this.props.match.params.id)}</p>
-                <p>{JSON.stringify(this.props.farms[0].name)}</p> */}
+                {this.props.crops.filter(crop => crop.farm.id === parseInt(this.props.match.params.id)).map((crop) => <Crops key={crop.id} {...crop}/>)}
                 <button onClick={this.openNewCropForm}>New Crop</button>
                 <CropForm toggle={this.toggleCropModal} {...this.state.cropForm} display={this.state.cropModal} onChange={this.onCropChange} onSubmit={this.onCropSubmit}/>
              </>
