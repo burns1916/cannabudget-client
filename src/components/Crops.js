@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { deleteCrop } from '../actions/crops';
 
-const Crop = props => {
+const Crops = props => {
 
    const onClick = () => {
         props.deleteCrop(props.id)
@@ -18,4 +18,4 @@ const Crop = props => {
 
 
 
-export default connect(null, { deleteCrop })(Crop)
+export default connect(null, { deleteCrop })(Crops)
