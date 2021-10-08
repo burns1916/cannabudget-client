@@ -15,7 +15,7 @@ const Farms = props => {
             <h2>Name: {props.name}</h2>
             <h3>Location: {props.location}</h3>
             <button onClick={onClickDelete}>Delete</button>
-            <NavLink to={`/farms/${props.id}`}>Manage Farm</NavLink>
+            <NavLink to={`/farms/${props.id}`}>Manage Crops</NavLink>
             </div>
           );
 }

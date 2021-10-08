@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteCrop } from '../actions/crops';
+import { NavLink } from 'react-router-dom';
+
 
 const Crops = props => {
 
@@ -12,6 +14,7 @@ const Crops = props => {
             <div>
             <h2>Strain Name: {props.strain_name}</h2>
             <button onClick={onClick}>Delete</button>
+            <NavLink to={`/farms/${props.farm.id}/crops/${props.id}`}>Manage Transactions</NavLink>   
             </div>   
         )
 }
