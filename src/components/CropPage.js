@@ -7,7 +7,6 @@ class CropPage extends Component {
     componentDidMount() {
         const id = this.props.match.params.id
         this.props.setCrop(id)
-        debugger;
     }
 
     componentWillUnmount() {
@@ -15,9 +14,11 @@ class CropPage extends Component {
     }
 
     render() {
-        const { strain_name } = this.props
+        debugger;
+        const { strain_name, farm.name } = this.props
         return (
             <>
+                <h1>{farm.name}</h1>
                 <h2>Strain Name: { strain_name }</h2>
             </>
         )
