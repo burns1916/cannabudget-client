@@ -13,14 +13,16 @@ class CropPage extends Component {
         this.props.unsetCrop()
     }
 
+
+
     render() {
-        debugger;
-        const { strain_name, farm.name } = this.props
+        console.log(this.props)
+        const { strain_name, } = this.props
         return (
             <>
-                <h1>{farm.name}</h1>
-                <h2>Strain Name: { strain_name }</h2>
+            <h3>Strain: {strain_name}</h3>
             </>
+
         )
     }
 }
