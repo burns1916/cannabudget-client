@@ -16,7 +16,6 @@ class CropPage extends Component {
 
 
     render() {
-        console.log(this.props)
         const { strain_name, } = this.props
         return (
             <>

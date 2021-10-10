@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
 import { getCrops, addCrop, editCrop } from '../actions/crops';
-import { getFarms } from '../actions/farms';
+import { getFarms, setFarm } from '../actions/farms';
 import Crops from '../components/Crops';
 import CropForm from '../components/CropForm';
 
@@ -47,6 +47,7 @@ class CropContainer extends Component{
     }
 
     componentDidMount(){
+        this.props.setFarm(parseInt(this.props.match.params.id))
         this.props.getCrops(parseInt(this.props.match.params.id))
         this.props.getFarms()
     }
@@ -89,5 +90,5 @@ const mapStateToProps = state => {
     }
 }
 
-export default withRouter(connect(mapStateToProps, { getCrops, addCrop, editCrop, getFarms })(CropContainer))
+export default withRouter(connect(mapStateToProps, { getCrops, addCrop, editCrop, getFarms, setFarm })(CropContainer))
 
