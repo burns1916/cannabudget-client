@@ -7,7 +7,7 @@ import PrivateRoute from './containers/PrivateRoute'
 import MyProfile from './containers/MyProfile'
 import FarmContainer from './containers/FarmContainer';
 import CropContainer from './containers/CropContainer';
-import CropPage from './components/CropPage';
+import TransactionContainer from './containers/TransactionContainer';
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           <PrivateRoute exact path='/myprofile' component={MyProfile} history={history} />
           <PrivateRoute exact path='/farms' component={FarmContainer} history={history} />
           <PrivateRoute exact path='/farms/:id/crops' component={CropContainer} history={history} />
-          <PrivateRoute exact path='/farms/:id/crops/:id' component={CropPage} history={history} />
+          <PrivateRoute exact path='/farms/:id/crops/:id' component={TransactionContainer} history={history} />
           <Route exact path='/' component={Home} history={history} />
         </Switch>
       </Router>

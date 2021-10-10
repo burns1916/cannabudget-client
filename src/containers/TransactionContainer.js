@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setCrop, unsetCrop } from '../actions/crops'
 
-class CropPage extends Component {
+class TransactionContainer extends Component {
 
     componentDidMount() {
         const id = this.props.match.params.id
@@ -31,4 +31,4 @@ const mapStateToProps = (state) => ({
     currentUser: state.currentUser.currentUser
 })
 
-export default connect(mapStateToProps, { setCrop, unsetCrop })(CropPage)
+export default connect(mapStateToProps, { setCrop, unsetCrop })(TransactionContainer)

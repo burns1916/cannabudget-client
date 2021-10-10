@@ -1,8 +1,7 @@
 import {
-    ADD_INCOME,
-    REMOVE_INCOME,
-    ADD_EXPENSE,
-    REMOVE_EXPENSE,
+    GET_TRANSACTIONS,
+    ADD_TRANSACTION,
+    REMOVE_TRANSACTION,
 } from '../actionTypes';
 
 const initialState = {
@@ -11,6 +10,12 @@ const initialState = {
 
 export function transactionsReducer(state = initialState, action) {
     switch(action.type) {
+        case GET_TRANSACTIONS:
+            return {...state, transactions: action.transactions}
+        case ADD_TRANSACTION:
+            return {...state, transactions: action.transactions}
+        case REMOVE_TRANSACTION:
+            return {...state, transactions: [...state.transactions.filter(transaction => transaction.id !== action.transactionId)]}
         default:
             return state
     }
