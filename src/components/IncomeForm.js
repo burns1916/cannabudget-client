@@ -1,7 +1,7 @@
 import React from 'react';
 
 const IncomeForm = props => {
-    const [ name, amount, onChange, onSubmit ] = props
+    const { name, amount, onChange, onSubmit } = props
 
     return (
         <div>
