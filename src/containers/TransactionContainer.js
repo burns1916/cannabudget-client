@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setCrop, unsetCrop } from '../actions/crops'
+import { addIncome } from "../actions/incomes";
+import { addExpense } from "../actions/expenses";
 import IncomeForm from '../components/IncomeForm'
 import ExpenseForm from '../components/ExpenseForm'
 
@@ -9,10 +11,12 @@ class TransactionContainer extends Component {
         incomeForm: {
             name: '',
             amount: '',
+            crop_id: this.props.match.params.id
         },
         expenseForm: {
             name: '',
             amount: '',
+            crop_id: this.props.match.params.id
         },
 
     }
@@ -45,6 +49,7 @@ class TransactionContainer extends Component {
             incomeForm: {
                 name: '',
                 amount: '',
+                crop_id: this.props.match.params.id,
             }
         })
     }
@@ -64,11 +69,12 @@ class TransactionContainer extends Component {
 
     onExpenseSubmit = (e) => {
         e.preventDefault();
-        this.props.addIncome(this.state.incomeForm)
+        this.props.addExpense(this.state.expenseForm)
         this.setState({
-            incomeForm: {
+            expenseForm: {
                 name: '',
                 amount: '',
+                crop_id: this.props.match.params.id,
             }
         })
     }
@@ -90,7 +96,9 @@ class TransactionContainer extends Component {
 
 const mapStateToProps = (state) => ({
     ...state.crops.selectedCrop,
-    currentUser: state.currentUser.currentUser
+    currentUser: state.currentUser.currentUser,
+    incomes: state.incomes.incomes,
+    expenses: state.expenses.expenses,
 })
 
-export default connect(mapStateToProps, { setCrop, unsetCrop })(TransactionContainer)
+export default connect(mapStateToProps, { setCrop, unsetCrop, addIncome, addExpense })(TransactionContainer)

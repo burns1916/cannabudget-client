@@ -6,7 +6,7 @@ import {
 
 import { getCurrentUser } from './currentUser';
 
-const BASE_URL = 'https://localhost:3001';
+const BASE_URL = 'http://localhost:3001';
 const INCOME_URL = `${BASE_URL}/incomes`
 
 export const getIncomes = () => {
@@ -26,7 +26,8 @@ export const addIncome = (incomeData) => {
     return dispatch => {
         const sendableIncomeData = {
             name: incomeData.name,
-            amount: incomeData.amount, 
+            amount: incomeData.amount,
+            crop_id: incomeData.crop_id, 
         }
         return fetch(INCOME_URL, {
             credentials: "include",
@@ -54,7 +55,7 @@ export const addIncome = (incomeData) => {
     }
 }
 
-export function deleteIncome => (incomeId) {
+export const deleteIncome = (incomeId) => {
     return (dispatch) => {
         return fetch(`${INCOME_URL}/${incomeId}`, {
             credentials: "include",

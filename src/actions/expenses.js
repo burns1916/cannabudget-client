@@ -6,7 +6,7 @@ import {
 
 import { getCurrentUser } from './currentUser';
 
-const BASE_URL = 'https://localhost:3001';
+const BASE_URL = 'http://localhost:3001';
 const EXPENSE_URL = `${BASE_URL}/expenses`
 
 export const getExpenses = () => {
@@ -24,9 +24,10 @@ export const getExpenses = () => {
 
 export const addExpense = (expenseData) => {
     return dispatch => {
-        const sendableIncomeData = {
+        const sendableExpenseData = {
             name: expenseData.name,
             amount: expenseData.amount, 
+            crop_id: expenseData.crop_id,
         }
         return fetch(EXPENSE_URL, {
             credentials: "include",
@@ -54,7 +55,7 @@ export const addExpense = (expenseData) => {
     }
 }
 
-export function deleteExpense => (expenseId) {
+export const deleteExpense = (expenseId) => {
     return (dispatch) => {
         return fetch(`${EXPENSE_URL}/${expenseId}`, {
             credentials: "include",
