@@ -1,10 +1,12 @@
 import React from 'react';
 
 const IncomeForm = props => {
-    const { name, amount, onChange, onSubmit } = props
+    const display = props.display ? "block" : "none"
+    const { name, amount, onChange, onSubmit, toggle } = props
 
     return (
-        <div>
+        <div id="myModal" style={{ display }}>
+            <button onClick={toggle}>Close Income Form</button>
             <form onSubmit={onSubmit}>
                 <label>Name:</label>
                 <input placeholder="Name" value={name} type="text" name="name" onChange={onChange} />

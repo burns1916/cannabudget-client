@@ -10,11 +10,13 @@ import Expenses from "../components/Expenses";
 
 class TransactionContainer extends Component {
     state = {
+        incomeModal: false,
         incomeForm: {
             name: '',
             amount: '',
             crop_id: this.props.match.params.id
         },
+        expenseModal: false,
         expenseForm: {
             name: '',
             amount: '',
@@ -22,6 +24,9 @@ class TransactionContainer extends Component {
         },
 
     }
+
+    toggleIncomeModal = () => this.setState({incomeModal: !this.state.incomeModal})
+    toggleExpenseModal = () => this.setState({expenseModal: !this.state.expenseModal})
 
     componentDidMount() {
         const id = this.props.match.params.id
@@ -50,6 +55,7 @@ class TransactionContainer extends Component {
         e.preventDefault();
         this.props.addIncome(this.state.incomeForm)
         this.setState({
+            incomeModal: false,
             incomeForm: {
                 name: '',
                 amount: '',
@@ -75,6 +81,7 @@ class TransactionContainer extends Component {
         e.preventDefault();
         this.props.addExpense(this.state.expenseForm)
         this.setState({
+            expenseModal: false,
             expenseForm: {
                 name: '',
                 amount: '',
@@ -83,15 +90,33 @@ class TransactionContainer extends Component {
         })
     }
 
+    openNewIncomeForm = () => this.setState({
+        incomeModal: true,
+        incomeForm: {
+            name: '',
+            amount: '',
+            crop_id: this.props.match.params.id,
+        }
+    })
+
+    openNewExpenseForm = () => this.setState({
+        expenseModal: true,
+        expenseForm: {
+            name: '',
+            amount: '',
+            crop_id: this.props.match.params.id,
+        }
+    })
+
     render() {
         const { strain_name, } = this.props
         return (
             <>
             <h3>Strain: {strain_name}</h3>
-            <h4>Crop Sale:</h4>
-            <IncomeForm {...this.state.incomeForm} onChange={this.onIncomeChange} onSubmit={this.onIncomeSubmit} />
-            <h4>Crop Expense:</h4>
-            <ExpenseForm {...this.state.expenseForm} onChange={this.onExpenseChange} onSubmit={this.onExpenseSubmit} />
+            <button onClick={this.openNewIncomeForm}>New Sale</button>
+            <IncomeForm toggle={this.toggleIncomeModal} {...this.state.incomeForm} display={this.state.incomeModal} onChange={this.onIncomeChange} onSubmit={this.onIncomeSubmit} />
+            <button onClick={this.openNewExpenseForm}>New Expense</button>
+            <ExpenseForm toggle={this.toggleExpenseModal} {...this.state.expenseForm} display={this.state.expenseModal} onChange={this.onExpenseChange} onSubmit={this.onExpenseSubmit} />
             {this.props.incomes.filter(income => income.crop.id === parseInt(this.props.match.params.id)).map((income) => <Incomes key={income.id} {...income}/>)}
             {this.props.expenses.filter(expense => expense.crop.id === parseInt(this.props.match.params.id)).map((expense) => <Expenses key={expense.id} {...expense}/>)}
             </>
