@@ -10,8 +10,8 @@ const Incomes = props => {
 
     return (
         <>
-        <h4>Name: {this.props.name}</h4>
-        <h4>Amount: {this.props.amount}</h4>
+        <h4>Name: {props.name}</h4>
+        <h4>Amount: {props.amount}</h4>
         <button onClick={onClick}>Delete</button>
         </>
     )
