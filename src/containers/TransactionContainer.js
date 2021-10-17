@@ -6,6 +6,7 @@ import { addExpense, getExpenses } from "../actions/expenses";
 import IncomeForm from '../components/IncomeForm'
 import ExpenseForm from '../components/ExpenseForm'
 import Incomes from "../components/Incomes";
+import Expenses from "../components/Expenses";
 
 class TransactionContainer extends Component {
     state = {
@@ -92,6 +93,7 @@ class TransactionContainer extends Component {
             <h4>Crop Expense:</h4>
             <ExpenseForm {...this.state.expenseForm} onChange={this.onExpenseChange} onSubmit={this.onExpenseSubmit} />
             {this.props.incomes.filter(income => income.crop.id === parseInt(this.props.match.params.id)).map((income) => <Incomes key={income.id} {...income}/>)}
+            {this.props.expenses.filter(expense => expense.crop.id === parseInt(this.props.match.params.id)).map((expense) => <Expenses key={expense.id} {...expense}/>)}
             </>
 
         )
