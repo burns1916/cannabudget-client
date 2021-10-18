@@ -7,6 +7,7 @@ import IncomeForm from '../components/IncomeForm'
 import ExpenseForm from '../components/ExpenseForm'
 import Incomes from "../components/Incomes";
 import Expenses from "../components/Expenses";
+import BalanceLedger from "../components/BalanceLedger";
 
 class TransactionContainer extends Component {
     state = {
@@ -113,6 +114,7 @@ class TransactionContainer extends Component {
         return (
             <>
             <h3>Strain: {strain_name}</h3>
+            {/* {this.props.incomes && this.props.expenses.filter(transaction => transaction.crop.id === parseInt(this.props.match.params.id)).map((transaction) => <BalanceLedger key={transaction.id} {...transaction}/>)} */}
             <button onClick={this.openNewIncomeForm}>New Sale</button>
             <IncomeForm toggle={this.toggleIncomeModal} {...this.state.incomeForm} display={this.state.incomeModal} onChange={this.onIncomeChange} onSubmit={this.onIncomeSubmit} />
             <button onClick={this.openNewExpenseForm}>New Expense</button>
