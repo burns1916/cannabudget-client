@@ -114,7 +114,8 @@ class TransactionContainer extends Component {
         return (
             <>
             <h3>Strain: {strain_name}</h3>
-            {this.props.crops.filter(crop => crop.id === parseInt(this.props.match.params.id)).map((crop) => <BalanceLedger key={crop.id} {...crop}/>)}
+            {/* {this.props.crops.filter(crop => crop.id === parseInt(this.props.match.params.id)).map((crop) => <BalanceLedger key={crop.id} {...crop}/>)} */}
+            <BalanceLedger incomes={this.props.incomes} expenses={this.props.expenses} />
             <button onClick={this.openNewIncomeForm}>New Sale</button>
             <IncomeForm toggle={this.toggleIncomeModal} {...this.state.incomeForm} display={this.state.incomeModal} onChange={this.onIncomeChange} onSubmit={this.onIncomeSubmit} />
             <button onClick={this.openNewExpenseForm}>New Expense</button>
