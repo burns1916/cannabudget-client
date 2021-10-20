@@ -11,9 +11,9 @@ import { getCurrentUser } from './currentUser';
 const BASE_URL = 'http://localhost:3001'
 const CROP_URL = `${BASE_URL}/crops`
 
-export const getCrops = (farmId) => {
+export const getCrops = () => {
     return (dispatch) => {
-        fetch(`${BASE_URL}/farms/${farmId}/crops`, {
+        fetch(`${BASE_URL}/crops`, {
             credentials: "include",
         })
         .then(resp => resp.json())

@@ -48,7 +48,7 @@ class CropContainer extends Component{
 
     componentDidMount(){
         this.props.setFarm(parseInt(this.props.match.params.id))
-        this.props.getCrops(parseInt(this.props.match.params.id))
+        this.props.getCrops()
         this.props.getFarms()
     }
        
