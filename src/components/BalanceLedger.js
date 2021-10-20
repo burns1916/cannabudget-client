@@ -4,11 +4,11 @@ const BalanceLedger = props => {
 
     const incomeValues = []
     props.incomes.forEach(income => incomeValues.push(income.amount))
-    const incomeTotals = incomeValues.reduce((acc, val) => acc + val)
+    const incomeTotals = incomeValues.reduce((acc, val) => acc + val, 0)
 
     const expenseValues = []
     props.expenses.forEach(expense => expenseValues.push(expense.amount))
-    const expenseTotals = expenseValues.reduce((acc, val) => acc + val)
+    const expenseTotals = expenseValues.reduce((acc, val) => acc + val, 0)
 
     const balance = incomeTotals - expenseTotals 
 
