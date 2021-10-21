@@ -8,12 +8,13 @@ import MyProfile from './containers/MyProfile'
 import FarmContainer from './containers/FarmContainer';
 import CropContainer from './containers/CropContainer';
 import TransactionContainer from './containers/TransactionContainer';
+import classes from './App.module.css'
 
 
 function App() {
   const history = useHistory();
   return(
-    <div>
+    <div className={classes.App}>
       <Router>
         <NavBar />
         <Switch>
