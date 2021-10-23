@@ -1,5 +1,5 @@
 import React from "react";
-
+import classes from './Crop.module.css'
 
 const CropForm = props => {
 
@@ -8,11 +8,11 @@ const CropForm = props => {
 
     return (
         <div id="myModal" style={{ display }}>
-        <button onClick={toggle}>Close Crop Form</button>
+        <button onClick={toggle} className={classes.formBtn}>Close Crop Form</button>
         <form onSubmit={onSubmit}>
-            <label>Strain Name:</label>
-            <input placeholder="strain name" value={strain_name} type="text" name="strain_name" onChange={onChange} />
-            <input type="submit" value="Submit" />
+            <label className={classes.title}>Strain Name:</label>
+            <input placeholder="strain name" value={strain_name} type="text" name="strain_name" onChange={onChange} className={classes.formInput} />
+            <input type="submit" value="Submit" className={classes.submitBtn} />
         </form>
         </div>
     )
