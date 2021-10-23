@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login, getCurrentUser } from '../actions/currentUser';
 import { withRouter, Redirect } from 'react-router-dom';
+import classes from './UserAuth.module.css'
 
 class Login extends Component {
 
@@ -35,16 +36,16 @@ class Login extends Component {
             <div>
                 <form onSubmit={this.onSubmit}>
                     <div>
-                        <h2>Login</h2>
+                        <h2 className={classes.title}>Login</h2>
                     </div>
                     <div>
-                        <input placeholder="username" value={this.state.username} name="username" type="text" onChange={this.onChange} />
+                        <input placeholder="username" value={this.state.username} name="username" type="text" onChange={this.onChange} className={classes.formInput} />
                     </div>
                     <div>
-                        <input placeholder="password" value={this.state.password} name="password" type="password" onChange={this.onChange} />
+                        <input placeholder="password" value={this.state.password} name="password" type="password" onChange={this.onChange} className={classes.formInput}/>
                     </div>
                     <div>
-                        <input type="submit" value="Log In" />
+                        <input type="submit" value="Log In" className={classes.submitBtn} />
                     </div>
                 </form>
             </div>

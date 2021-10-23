@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Logout from "./Logout";
+import classes from './NavBar.module.css'
 
 const NavBar = props => {
 
@@ -10,17 +11,17 @@ const NavBar = props => {
             <>
             <div>
                 <Link to="/">
-                    <span>
+                    <span className={classes.navlink}>
                         Home
                     </span>
                 </Link>
                 <Link to="/farms">
-                    <span>
+                    <span className={classes.navlink}>
                         Farms
                     </span>
                 </Link>
                 <Link to="/myprofile">
-                    <span>
+                    <span className={classes.navlink}>
                         Profile
                     </span>
                 </Link>
@@ -32,17 +33,17 @@ const NavBar = props => {
             :
             <div>
                 <Link to="/">
-                    <span>
+                    <span className={classes.navlink}>
                         Home
                     </span>
                 </Link>
                 <Link to="/signup">
-                    <span>
+                    <span className={classes.navlink}>
                         Sign Up
                     </span>
                 </Link>
                 <Link to="/login">
-                    <span>
+                    <span className={classes.navlink}>
                         Login
                     </span>
                 </Link>
