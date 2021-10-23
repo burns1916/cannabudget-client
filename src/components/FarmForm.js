@@ -1,4 +1,5 @@
 import React from "react";
+import classes from './Farm.module.css'
 
 const FarmForm = props => {
 
@@ -7,13 +8,13 @@ const FarmForm = props => {
 
     return (
         <div id="myModal" style={{ display }}>
-        <button onClick={toggle}>Close Farm Form</button>
+        <button onClick={toggle} className={classes.formBtn}>Close Farm Form</button>
         <form onSubmit={onSubmit}>
-            <label>Farm Name:</label>
-            <input placeholder="name" value={name} type="text" name="name" onChange={onChange} />
-            <label>Location:</label>
-            <input placeholder="location" value={location} type="text" name="location" onChange={onChange} />
-            <input type="submit" value="Submit" />
+            <label className={classes.title}>Farm Name:</label>
+            <input placeholder="name" value={name} type="text" name="name" onChange={onChange} className={classes.inputForm} />
+            <label className={classes.title}>Location:</label>
+            <input placeholder="location" value={location} type="text" name="location" onChange={onChange} className={classes.inputForm}/>
+            <input type="submit" value="Submit" className={classes.submitBtn} />
         </form>
         </div>
     )

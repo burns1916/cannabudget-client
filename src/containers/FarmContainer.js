@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import Farms from "../components/Farms";
 import FarmForm from "../components/FarmForm";
 import { getFarms, addFarm, editFarm} from '../actions/farms';
+import classes from '../components/Farm.module.css'
 
 class FarmContainer extends Component {
 
@@ -62,7 +63,7 @@ class FarmContainer extends Component {
     render() {
         return(
             <>
-            <button onClick={this.openNewFarmForm}>New Farm</button>
+            <button onClick={this.openNewFarmForm} className={classes.formBtn}>New Farm</button>
             <FarmForm toggle={this.toggleFarmModal} {...this.state.farmForm} display={this.state.farmModal} onChange={this.onFarmChange} onSubmit={this.onFarmSubmit}/>
             {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map(farm => <Farms key={farm.id} populateForm={this.populateForm} {...farm} />)}
             </>

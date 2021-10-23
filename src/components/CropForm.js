@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const CropForm = props => {
 
     const display = props.display ? "block" : "none"
