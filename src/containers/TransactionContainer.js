@@ -8,6 +8,7 @@ import ExpenseForm from '../components/ExpenseForm'
 import Incomes from "../components/Incomes";
 import Expenses from "../components/Expenses";
 import BalanceLedger from "../components/BalanceLedger";
+import classes from '../components/Transaction.module.css'
 
 class TransactionContainer extends Component {
     state = {
@@ -113,11 +114,11 @@ class TransactionContainer extends Component {
         const { strain_name, } = this.props
         return (
             <>
-            <h3>Strain: {strain_name}</h3>
+            <h3 className={classes.title}>Strain: {strain_name}</h3>
             <BalanceLedger incomes={this.props.incomes.filter(income => income.crop.id === parseInt(this.props.match.params.id))} expenses={this.props.expenses.filter(expense => expense.crop.id === parseInt(this.props.match.params.id))} />
-            <button onClick={this.openNewIncomeForm}>New Sale</button>
+            <button onClick={this.openNewIncomeForm} className={classes.formBtn}>New Sale</button>
             <IncomeForm toggle={this.toggleIncomeModal} {...this.state.incomeForm} display={this.state.incomeModal} onChange={this.onIncomeChange} onSubmit={this.onIncomeSubmit} />
-            <button onClick={this.openNewExpenseForm}>New Expense</button>
+            <button onClick={this.openNewExpenseForm} className={classes.formBtn}>New Expense</button>
             <ExpenseForm toggle={this.toggleExpenseModal} {...this.state.expenseForm} display={this.state.expenseModal} onChange={this.onExpenseChange} onSubmit={this.onExpenseSubmit} />
             {this.props.incomes.filter(income => income.crop.id === parseInt(this.props.match.params.id)).map((income) => <Incomes key={income.id} {...income}/>)}
             {this.props.expenses.filter(expense => expense.crop.id === parseInt(this.props.match.params.id)).map((expense) => <Expenses key={expense.id} {...expense}/>)}

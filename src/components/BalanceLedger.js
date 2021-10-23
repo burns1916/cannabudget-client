@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './Transaction.module.css'
 
 const BalanceLedger = props => {
 
@@ -14,9 +15,9 @@ const BalanceLedger = props => {
 
     return(
         <>
-            <h3>Balance:</h3>{balance}<br />
-            <h5>Total Income:</h5> {incomeTotals}<br />
-            <h5>Total Expenses:</h5>{expenseTotals}<br />
+            <h3 className={classes.title}>Balance:</h3>{balance}<br />
+            <h5 className={classes.title}>Total Income:</h5> {incomeTotals}<br />
+            <h5 className={classes.title}>Total Expenses:</h5>{expenseTotals}<br />
             
         </>
     )
