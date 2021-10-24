@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getCurrentUser } from '../actions/currentUser';
+import { authUser } from '../actions/currentUser';
 import Header from '../components/Header';
+import MyProfile from './MyProfile';
 
 class Home extends Component {
 
     componentDidMount(){
-        this.props.getCurrentUser()
+        this.props.authUser()
     }
 
     render() {
         return(
             <>
             <Header />
+            {this.props.currentUser.authComplete ? <MyProfile /> : "Please Login or Sign Up" }
             </>
         )
     }
 }
 
-export default connect(null, { getCurrentUser })(Home)
+const mapStateToProps = (state) => {
+    return {
+        currentUser: state.currentUser
+    }
+}
+
+export default connect(mapStateToProps, { authUser })(Home)

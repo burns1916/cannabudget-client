@@ -15,7 +15,6 @@ class MyProfile extends Component {
     return (
       <>
         <div>
-          <h2>Farm Manager</h2>
           <h2>Welcome, {this.props.currentUser && this.props.currentUser.username}</h2>
         </div>
 

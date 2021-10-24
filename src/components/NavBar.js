@@ -20,11 +20,6 @@ const NavBar = props => {
                         Farms
                     </span>
                 </Link>
-                <Link to="/myprofile">
-                    <span className={classes.navlink}>
-                        Profile
-                    </span>
-                </Link>
             </div>
             <div>
                 <Logout />
