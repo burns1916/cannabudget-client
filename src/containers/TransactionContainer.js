@@ -111,14 +111,15 @@ class TransactionContainer extends Component {
     })
 
     render() {
-        const { strain_name, } = this.props
+        const { strain_name} = this.props
         return (
             <>
+            
             <h3 className={classes.title}>Strain: {strain_name}</h3>
             <BalanceLedger incomes={this.props.incomes.filter(income => income.crop.id === parseInt(this.props.match.params.id))} expenses={this.props.expenses.filter(expense => expense.crop.id === parseInt(this.props.match.params.id))} />
-            <button onClick={this.openNewIncomeForm} className={classes.formBtn}>New Sale</button>
+            {this.state.incomeModal ? <button onClick={this.toggleIncomeModal} className={classes.formBtn}>Close Sale Form</button> : <button onClick={this.openNewIncomeForm} className={classes.formBtn}>New Sale</button> }
+            {this.state.expenseModal ? <button onClick={this.toggleExpenseModal} className={classes.formBtn}>Close Expense Form</button> : <button onClick={this.openNewExpenseForm} className={classes.formBtn}>New Expense</button> }
             <IncomeForm toggle={this.toggleIncomeModal} {...this.state.incomeForm} display={this.state.incomeModal} onChange={this.onIncomeChange} onSubmit={this.onIncomeSubmit} />
-            <button onClick={this.openNewExpenseForm} className={classes.formBtn}>New Expense</button>
             <ExpenseForm toggle={this.toggleExpenseModal} {...this.state.expenseForm} display={this.state.expenseModal} onChange={this.onExpenseChange} onSubmit={this.onExpenseSubmit} />
             {this.props.incomes.filter(income => income.crop.id === parseInt(this.props.match.params.id)).map((income) => <Incomes key={income.id} {...income}/>)}
             {this.props.expenses.filter(expense => expense.crop.id === parseInt(this.props.match.params.id)).map((expense) => <Expenses key={expense.id} {...expense}/>)}

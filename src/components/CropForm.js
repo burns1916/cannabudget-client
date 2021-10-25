@@ -4,7 +4,7 @@ import classes from './Crop.module.css'
 const CropForm = props => {
 
     const display = props.display ? "block" : "none"
-    const { strain_name, toggle, onChange, onSubmit } = props
+    const { strain_name, onChange, onSubmit } = props
 
     return (
         <div id="myModal" style={{ display }}>
