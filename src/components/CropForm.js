@@ -8,7 +8,6 @@ const CropForm = props => {
 
     return (
         <div id="myModal" style={{ display }}>
-        <button onClick={toggle} className={classes.formBtn}>Close Crop Form</button>
         <form onSubmit={onSubmit}>
             <label className={classes.title}>Strain Name:</label>
             <input placeholder="strain name" value={strain_name} type="text" name="strain_name" onChange={onChange} className={classes.formInput} />
