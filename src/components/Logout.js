@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../actions/currentUser';
 import { withRouter } from 'react-router-dom';
+import classes from './UserAuth.module.css'
 
 const Logout = ({ logout, history }) => {
     return (
@@ -10,7 +11,7 @@ const Logout = ({ logout, history }) => {
             logout(history)
         }
     } >
-    <input type="submit" value="Log Out" />
+    <input type="submit" value="Log Out" className={classes.logoutBtn} />
     </form>
     )
 }

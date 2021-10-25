@@ -1,11 +1,22 @@
+* {
+  margin: 0;
+}
+
+head {
+  margin: 0;
+  padding: 0;
+}
+
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+    padding: 0px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: lightgrey;
+    background-color: rgb(231, 231, 231);
+  }
+
+  div#root{
+    margin: 0;
   }
   
   code {

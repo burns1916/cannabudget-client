@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { authUser } from '../actions/currentUser';
-import Header from '../components/Header';
 import MyProfile from './MyProfile';
 
 class Home extends Component {
@@ -13,8 +12,7 @@ class Home extends Component {
     render() {
         return(
             <>
-            <Header />
-            {this.props.currentUser.authComplete ? <MyProfile /> : "Please Login or Sign Up" }
+            {this.props.currentUser === null ? "Please Login or Sign Up" : <MyProfile /> }
             </>
         )
     }
