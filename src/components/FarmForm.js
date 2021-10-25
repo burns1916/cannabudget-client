@@ -4,11 +4,10 @@ import classes from './Farm.module.css'
 const FarmForm = props => {
 
     const display = props.display ? "block" : "none"
-    const { name, location, toggle, onChange, onSubmit } = props
+    const { name, location, onChange, onSubmit } = props
 
     return (
         <div id="myModal" style={{ display }}>
-        <button onClick={toggle} className={classes.formBtn}>Close Farm Form</button>
         <form onSubmit={onSubmit}>
             <label className={classes.title}>Farm Name:</label>
             <input placeholder="name" value={name} type="text" name="name" onChange={onChange} className={classes.inputForm} />

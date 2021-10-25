@@ -63,8 +63,8 @@ class FarmContainer extends Component {
     render() {
         return(
             <>
-            <button onClick={this.openNewFarmForm} className={classes.formBtn}>New Farm</button>
-            <FarmForm toggle={this.toggleFarmModal} {...this.state.farmForm} display={this.state.farmModal} onChange={this.onFarmChange} onSubmit={this.onFarmSubmit}/>
+            {this.state.farmModal ? <button onClick={this.toggleFarmModal} className={classes.formBtn}>Close Farm Form</button> : <button onClick={this.openNewFarmForm} className={classes.formBtn}>New Farm</button> }
+            <FarmForm {...this.state.farmForm} display={this.state.farmModal} onChange={this.onFarmChange} onSubmit={this.onFarmSubmit}/>
             {this.props.currentUser && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map(farm => <Farms key={farm.id} populateForm={this.populateForm} {...farm} />)}
             </>
         )
