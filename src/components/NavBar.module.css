@@ -1,0 +1,25 @@
+.navBar {
+    display: flex;
+    background-color: rgb(117, 85, 60);
+}
+
+.navLink, .navLink:active, .navLink:visited{
+    padding: 0px;
+    margin: 10px;
+    background-color: rgb(117, 85, 60);
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.navLink:hover{
+    padding: 0px;
+    margin: 10px;
+    background-color: rgb(75, 39, 13);
+    color: whitesmoke;
+    border-radius: 5px;
+}
+
+.logoutBtn{
+    margin-left: auto;
+}

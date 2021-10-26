@@ -9,36 +9,42 @@ const NavBar = props => {
         <nav>
             {props.loggedIn ?
             <>
-            <div>
-                <Link to="/">
-                    <span className={classes.navlink}>
+            <div className={classes.navBar}>
+                <div>
+                <Link to="/" className={classes.navLink}>
+                    <span>  
                         Home
                     </span>
                 </Link>
-                <Link to="/farms">
-                    <span className={classes.navlink}>
+                </div>
+                <div>
+                <Link to="/farms" className={classes.navLink}>
+                    <span>
                         Farms
                     </span>
                 </Link>
-            </div>
-            <div>
+                </div>
+                <div className={classes.logoutBtn}>
+                <span>
                 <Logout />
+                </span>
+                </div>
             </div>
             </>
             :
-            <div>
+            <div className={classes.navBar}>
                 <Link to="/">
-                    <span className={classes.navlink}>
+                    <span className={classes.navLink}>
                         Home
                     </span>
                 </Link>
                 <Link to="/signup">
-                    <span className={classes.navlink}>
+                    <span className={classes.navLink}>
                         Sign Up
                     </span>
                 </Link>
                 <Link to="/login">
-                    <span className={classes.navlink}>
+                    <span className={classes.navLink}>
                         Login
                     </span>
                 </Link>
