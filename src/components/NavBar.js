@@ -50,6 +50,7 @@ const NavBar = props => {
                 </Link>
             </div>
             }
+            <br/>
         </nav>
     )
 }

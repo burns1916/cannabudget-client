@@ -1,0 +1,18 @@
+.cropContainer{
+    display: flex;
+    justify-items: auto;
+}
+
+.title{
+
+}
+
+.deleteBtn{
+    margin: 10px;
+    padding: 5px;
+    height: 50%;
+}
+
+.link{
+
+}

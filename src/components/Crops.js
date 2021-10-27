@@ -12,11 +12,14 @@ const Crops = props => {
    }
 
         return(
-            <div>
-            <h2 className={classes.title}>Strain Name: {props.strain_name}</h2>
-            <button onClick={onClick} className={classes.deleteBtn}>Delete</button>
-            <NavLink to={`/farms/${props.farm.id}/crops/${props.id}`} className={classes.link}>Manage Transactions</NavLink>   
-            </div>   
+             <>
+            <div className={classes.cropContainer}>
+            <h4 className={classes.title}>Strain:</h4>
+            <h3>{props.strain_name}</h3>
+            <button onClick={onClick} className={classes.deleteBtn}><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </div>
+            <NavLink to={`/farms/${props.farm.id}/crops/${props.id}`} className={classes.link}>Budget</NavLink>
+            </>      
         )
 }
 
