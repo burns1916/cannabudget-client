@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../actions/currentUser';
 import { withRouter } from 'react-router-dom';
-import classes from './UserAuth.module.css'
+import classes from './NavBar.module.css'
 
 const Logout = ({ logout, history }) => {
     return (

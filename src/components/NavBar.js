@@ -24,10 +24,8 @@ const NavBar = props => {
                     </span>
                 </Link>
                 </div>
-                <div className={classes.logoutBtn}>
-                <span>
+                <div className={classes.logoutBtnContainer}>
                 <Logout />
-                </span>
                 </div>
             </div>
             </>
