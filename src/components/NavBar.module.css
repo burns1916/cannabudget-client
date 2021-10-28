@@ -2,23 +2,27 @@
     display: flex;
     margin: 0;
     padding: 0;
-    background-color: rgba(82, 58, 28, 0.815);
-    top: 0;
+    background-color: rgba(82, 58, 28);
     width: 100%;
+    height: 30px;
 }
 
 .navLink, .navLink:active, .navLink:visited{
-    display: block;
-    color: white;
     text-align: center;
-    padding: 8px 10px;
+    background-color: rgba(82, 58, 28);
+    color: rgba(255, 255, 255, 0.815);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 5px;
+    margin: 0px;
+    display: block;
     text-decoration: none;
-    float: left;
-    border-right: 1px solid #bbb;
 }
 
 .navLink:hover{
-    background-color: rgb(2, 87, 15);
+    background: rgb(2, 87, 15);
+    color:(255,255,255);
+    cursor: pointer;
 }
 
 .logoutBtnContainer {
@@ -37,7 +41,7 @@
     color: rgba(255, 255, 255, 0.815);
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 14px 0;
+    padding: 7px 0;
     overflow: hidden;
 }
 
