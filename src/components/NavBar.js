@@ -12,16 +12,18 @@ const NavBar = props => {
             <div className={classes.navBar}>
                 <div>
                 <Link to="/" className={classes.navLink}>
-                    <span>  
+                    <div className={classes.tree}>
+                    <i class="fa fa-tree" aria-hidden="true"></i>
                         Home
-                    </span>
+                    </div>
                 </Link>
                 </div>
                 <div>
                 <Link to="/farms" className={classes.navLink}>
-                    <span>
+                    <div className={classes.tree}>  
+                    <i class="fa fa-tree" aria-hidden="true"></i>
                         Farms
-                    </span>
+                    </div>
                 </Link>
                 </div>
                 <div className={classes.logoutBtnContainer}>
@@ -31,20 +33,23 @@ const NavBar = props => {
             </>
             :
             <div className={classes.navBar}>
-                <Link to="/">
-                    <span className={classes.navLink}>
+                <Link to="/" className={classes.navLink}>
+                <div className={classes.tree}>  
+                    <i class="fa fa-tree" aria-hidden="true"></i>
                         Home
-                    </span>
+                    </div>
                 </Link>
-                <Link to="/signup">
-                    <span className={classes.navLink}>
+                <Link to="/signup" className={classes.navLink}>
+                <div className={classes.tree}>  
+                    <i class="fa fa-tree" aria-hidden="true"></i>
                         Sign Up
-                    </span>
+                    </div>
                 </Link>
-                <Link to="/login">
-                    <span className={classes.navLink}>
+                <Link to="/login" className={classes.navLink}>
+                <div className={classes.tree}>  
+                    <i class="fa fa-tree" aria-hidden="true"></i>
                         Login
-                    </span>
+                    </div>
                 </Link>
             </div>
             }

@@ -14,9 +14,11 @@ class Home extends Component {
     render() {
         return(
             <>
-            {this.props.currentUser === null ? "Please Login or Sign Up" : <MyProfile /> }
-            <br />
-            <br />
+            {this.props.currentUser === null ? "Please Login or Sign Up" : 
+                <>
+                <MyProfile />
+                <br />
+                <br />
                 <h3>My Farms:</h3>
                 <table className={classes.farmsTable}>
                     <tr>
@@ -25,15 +27,34 @@ class Home extends Component {
                         <th>Crops</th>
                     </tr>
 
-                {this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map(farms => 
+                {this.props.farms.filter(farm => farm.user.id === this.props.currentUser.currentUser.id).map(farms => 
                     <tr >
                         <td className={classes.farmRow}>{farms.name}</td>
                         <td className={classes.farmRow}>{farms.location}</td>
-                        <td className={classes.farmRow}><NavLink to={`/farms/${farms.id}/crops`}>Manage Crops</NavLink></td>
+                        <td className={classes.farmRow}><NavLink to={`/farms/${farms.id}/crops`} className={classes.link}>Manage Crops</NavLink></td>
                     </tr>
                 )}
 
                     </table>
+                <br />
+                <br />
+                <h3>My Crops:</h3>
+                <table className={classes.farmsTable}>
+                    <tr>
+                        <th>Strain</th>
+                        <th>Farm</th>
+                        <th>Transactions</th>
+                    </tr>
+                {this.props.crops.filter(crop => crop.farm.user.id === this.props.currentUser.currentUser.id).map(crops =>
+                    <tr>
+                        <td className={classes.farmRow}>{crops.strain_name}</td>
+                        <td className={classes.farmRow}>{crops.farm.name}</td>
+                        <td className={classes.farmRow}><NavLink to={`/farms/${crops.farm.id}/crops/${crops.id}`} className={classes.link}>Manage Transactions</NavLink></td>
+                    </tr>    
+                )}
+                </table>
+                    </>
+                }
             </>
         )
     }
@@ -41,8 +62,9 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        currentUser: state.currentUser.currentUser,
-        farms: state.farms.farms
+        currentUser: state.currentUser,
+        farms: state.farms.farms,
+        crops: state.crops.crops,
     }
 }
 
