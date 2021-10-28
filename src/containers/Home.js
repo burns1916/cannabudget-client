@@ -15,6 +15,8 @@ class Home extends Component {
         return(
             <>
             {this.props.currentUser === null ? "Please Login or Sign Up" : <MyProfile /> }
+            <br />
+            <br />
                 <h3>My Farms:</h3>
                 <table className={classes.farmsTable}>
                     <tr>
@@ -24,10 +26,10 @@ class Home extends Component {
                     </tr>
 
                 {this.props.farms.filter(farm => farm.user.id === this.props.currentUser.id).map(farms => 
-                    <tr>
-                        <td>{farms.name}</td>
-                        <td>{farms.location}</td>
-                        <td><NavLink to={`/farms/${farms.id}/crops`}>Manage Crops</NavLink></td>
+                    <tr >
+                        <td className={classes.farmRow}>{farms.name}</td>
+                        <td className={classes.farmRow}>{farms.location}</td>
+                        <td className={classes.farmRow}><NavLink to={`/farms/${farms.id}/crops`}>Manage Crops</NavLink></td>
                     </tr>
                 )}
 

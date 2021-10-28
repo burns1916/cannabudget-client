@@ -1,0 +1,12 @@
+.farmsTable{
+    width: 100%;
+}
+
+.farmRow{
+    text-align: center;
+}
+
+th{
+    text-decoration: underline;
+    font-size: large;
+}
