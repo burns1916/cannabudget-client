@@ -12,6 +12,7 @@ const Logout = ({ logout, history }) => {
         }
     } >
     <input type="submit" value="Log Out" className={classes.logoutBtn} />
+
     </form>
     )
 }

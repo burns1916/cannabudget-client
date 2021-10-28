@@ -18,7 +18,7 @@
 }
 
 .navLink:hover{
-    background-color: #111;
+    background-color: rgb(2, 87, 15);
 }
 
 .logoutBtnContainer {
@@ -26,17 +26,27 @@
 }
 
 .logoutBtn {
-    padding: 4px;
-    margin: 5px;
-    background-color: #666;
-    color: black;
-    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    margin: auto;
+    border-radius: 6px 22px;
+    transition: all .2s ease;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgba(82, 58, 28, 0.815);
+    color: rgba(255, 255, 255, 0.815);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 14px 0;
+    overflow: hidden;
 }
 
+
+
 .logoutBtn:hover {
-    padding: 4px;
-    margin: 5px;
-    background-color: rgb(0, 0, 0);
-    color: whitesmoke;
-    border-radius: 5px;
+    border-radius: 22px 6px;
+    background: rgb(2, 87, 15);
+    color:(255,255,255);
+    cursor: pointer;
 }
+
