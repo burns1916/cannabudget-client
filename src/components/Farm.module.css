@@ -1,7 +1,7 @@
 .formBtn{
-    width: 120px;
-    height: 34px;
-    margin: auto;
+    width: 30%;
+    height: 32px;
+    margin: 0;
     border-radius: 6px 22px;
     transition: all .2s ease;
     box-sizing: border-box;
@@ -9,7 +9,7 @@
     color: rgb(0, 0, 0);
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 14px 0;
+    padding: 7px 0;
     overflow: hidden;
 }
 
@@ -23,7 +23,7 @@
 .tree{
     position: relative;
     transition: all .2s ease;
-    top: 15px;
+    top: 20px;
 }
 
 .formBtn:hover > span{
