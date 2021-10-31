@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import classes from './Farm.module.css'
 import { Country, State, City } from 'country-state-city'
 
@@ -10,25 +10,19 @@ const FarmForm = props => {
     const states = State.getStatesOfCountry('US')
     let [state, selectState] = useState("Select a State")
 
-    let cities = City.getCitiesOfState('US', state)
-    const [city, selectCity] = useState("select a City")  
+    const cities = City.getCitiesOfState('US', state)
 
     let handleStateChange = (e) => {
         selectState(e.target.value)
     }
 
-    let handleCityChange = (e) => {
-        selectCity(e.target.value)
-        
-    }
-
-
     return (
         <div id="myModal" style={{ display }}>
         <form onSubmit={onSubmit}>
-            <label className={classes.title}>Farm Name:</label>
-            <input placeholder="name" value={name} type="text" name="name" onChange={onChange} className={classes.inputForm} />
-            <label className={classes.title}>Location:</label>
+            <label className={classes.inputTitle}>Farm Name:</label>
+            <input placeholder="name" value={name} type="text" name="name" onChange={onChange} />
+            <br />
+            <label className={classes.inputTitle}>Location:</label>
             <select onChange={handleStateChange}>
                 <option value="Select a State"> -- Select a State -- </option>
                 {states.map((state, pos) => <option key={pos} value={state.isoCode}>{state.name}</option>)}
@@ -37,9 +31,13 @@ const FarmForm = props => {
                 <option value="Select a City"> -- Select a City -- </option>
                 {cities.map((city, pos) => <option key={pos} value={city.name}>{city.name}</option>)}
             </select>
+            <br />
+            <br />
             {/* <input placeholder="location" value={location} type="hidden" name="location" className={classes.inputForm}/> */}
             <input type="submit" value="Submit" className={classes.submitBtn} />
         </form>
+        <br />
+        <br />
         </div>
     )
 }

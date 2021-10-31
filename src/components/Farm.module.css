@@ -1,5 +1,5 @@
 .formBtn{
-    width: 30%;
+    width: 250px;
     height: 32px;
     margin: 0;
     border-radius: 6px 22px;
@@ -29,4 +29,55 @@
 .formBtn:hover > span{
     top: 3px;
     color: white;
+}
+
+.inputTitle{
+    font-weight: bold;
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: right;
+}
+
+.submitBtn{
+    width: 100px;
+    height: 32px;
+    margin: 0px 0px 0px 375px;
+    border-radius: 6px 22px;
+    transition: all .2s ease;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 7px 0;
+    overflow: hidden;
+}
+
+.submitBtn:hover{
+    border-radius: 22px 6px;
+    background: rgb(1, 102, 16);
+    color: white;
+    cursor: pointer;
+}
+
+.deleteBtn{
+
+}
+
+.link{
+    text-decoration: none;
+    color:forestgreen;
+}
+
+.link:hover{
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.farmContainer{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
 }
