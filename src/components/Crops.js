@@ -12,14 +12,16 @@ const Crops = props => {
    }
 
         return(
-             <>
+          <div>
+               <br />
             <div className={classes.cropContainer}>
-            <h4 className={classes.title}>Strain:</h4>
-            <h3>{props.strain_name}</h3>
+            <h3 className={classes.title}>Strain: {props.strain_name}</h3>
             <button onClick={onClick} className={classes.deleteBtn}><i class="fa fa-trash" aria-hidden="true"></i></button>
             </div>
             <NavLink to={`/farms/${props.farm.id}/crops/${props.id}`} className={classes.link}>Budget</NavLink>
-            </>      
+            <br />
+            <br />
+          </div>      
         )
 }
 

@@ -8,11 +8,15 @@ const CropForm = props => {
 
     return (
         <div id="myModal" style={{ display }}>
+            <br />
         <form onSubmit={onSubmit}>
-            <label className={classes.title}>Strain Name:</label>
-            <input placeholder="strain name" value={strain_name} type="text" name="strain_name" onChange={onChange} className={classes.formInput} />
+            <label className={classes.inputTitle}>Strain Name:</label>
+            <input placeholder="strain name" value={strain_name} type="text" name="strain_name" onChange={onChange} />
+            <br />
+            <br />
             <input type="submit" value="Submit" className={classes.submitBtn} />
         </form>
+        <br />
         </div>
     )
 }
