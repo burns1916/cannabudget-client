@@ -25,6 +25,11 @@
     cursor: pointer;
 }
 
+.linkContainer{
+    display: flex;
+    overflow: hidden;
+}
+
 .logoutBtnContainer {
     margin-left: auto;
 }
@@ -57,5 +62,12 @@
 .tree{
     color:white;
     text-indent: 0px;
+    position: relative;
+    transition: all .2s ease;
+    top: 20px;
+}
+
+.linkContainer:hover > div{
+    top: 3px;
 }
 

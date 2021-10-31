@@ -12,16 +12,20 @@ const NavBar = props => {
             <div className={classes.navBar}>
                 <div>
                 <Link to="/" className={classes.navLink}>
-                    <div className={classes.tree}>
-                    <i class="fa fa-tree" aria-hidden="true"></i>
+                    <div className={classes.linkContainer}>
+                        <div className={classes.tree}>
+                            <i class="fa fa-tree" aria-hidden="true"></i>
+                        </div>
                         Home
                     </div>
                 </Link>
                 </div>
                 <div>
                 <Link to="/farms" className={classes.navLink}>
+                <div className={classes.linkContainer}>
                     <div className={classes.tree}>  
                     <i class="fa fa-tree" aria-hidden="true"></i>
+                    </div>
                         Farms
                     </div>
                 </Link>
@@ -34,20 +38,26 @@ const NavBar = props => {
             :
             <div className={classes.navBar}>
                 <Link to="/" className={classes.navLink}>
+                <div className={classes.linkContainer}>
                 <div className={classes.tree}>  
                     <i class="fa fa-tree" aria-hidden="true"></i>
+                    </div>
                         Home
                     </div>
                 </Link>
                 <Link to="/signup" className={classes.navLink}>
+                <div className={classes.linkContainer}>
                 <div className={classes.tree}>  
                     <i class="fa fa-tree" aria-hidden="true"></i>
+                    </div>
                         Sign Up
                     </div>
                 </Link>
                 <Link to="/login" className={classes.navLink}>
+                <div className={classes.linkContainer}>
                 <div className={classes.tree}>  
                     <i class="fa fa-tree" aria-hidden="true"></i>
+                    </div>
                         Login
                     </div>
                 </Link>
