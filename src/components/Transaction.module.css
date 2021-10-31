@@ -1,0 +1,97 @@
+.formBtn{
+    width: 250px;
+    height: 32px;
+    margin: 0;
+    border-radius: 6px 22px;
+    transition: all .2s ease;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 7px 0;
+    overflow: hidden;
+}
+
+.formBtn:hover{
+    border-radius: 22px 6px;
+    background: rgb(1, 102, 16);
+    color: white;
+    cursor: pointer;
+}
+
+.tree{
+    position: relative;
+    transition: all .2s ease;
+    top: 20px;
+}
+
+.formBtn:hover > span{
+    top: 3px;
+    color: white;
+}
+
+.inputTitle{
+    font-weight: bold;
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 75px;
+    text-align: right;
+}
+
+.submitBtn{
+    width: 100px;
+    height: 32px;
+    margin: 0px 0px 0px 150px;
+    border-radius: 6px 22px;
+    transition: all .2s ease;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 7px 0;
+    overflow: hidden;
+}
+
+.submitBtn:hover{
+    border-radius: 22px 6px;
+    background: rgb(1, 102, 16);
+    color: white;
+    cursor: pointer;
+}
+
+.transactionTable{
+    width: 100%;
+}
+
+.transactionRow{
+    width: 100%;
+}
+
+.transactionColumn{
+    width: 50%;
+}
+
+.incomeContainer{
+    width: 25%;
+}
+
+.balanceContainer{
+    display: flex;
+}
+
+.balanceAmount{
+    text-indent: 15px;
+}
+
+.incomeExpenseContainer{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.transactionFormContainer{
+    display: flex;
+}

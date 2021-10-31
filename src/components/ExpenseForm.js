@@ -7,13 +7,16 @@ const ExpenseForm = props => {
 
     return (
         <div id="myModal" style={{ display }}>
+            <div className={classes.incomeContainer}>
             <form onSubmit={onSubmit}>
-                <label className={classes.title}>Name:</label>
+                <label className={classes.inputTitle}>Name:</label>
                 <input placeholder="Name" value={name} type="text" name="name" onChange={onChange} className={classes.inputForm} />
-                <label className={classes.title}>Amount:</label>
+                <br />
+                <label className={classes.inputTitle}>Amount:</label>
                 <input placeholder="Amount" value={amount} type="text" name="amount" onChange={onChange} className={classes.inputForm}/>
                 <input type="submit" value="Submit" className={classes.submitBtn} />
             </form>
+            </div>
         </div>
     )
 }

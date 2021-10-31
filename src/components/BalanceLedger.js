@@ -15,10 +15,15 @@ const BalanceLedger = props => {
 
     return(
         <>
-            <h3 className={classes.title}>Balance:</h3>{balance}<br />
-            <h5 className={classes.title}>Total Income:</h5> {incomeTotals}<br />
-            <h5 className={classes.title}>Total Expenses:</h5>{expenseTotals}<br />
-            
+            <div className={classes.balanceContainer}>
+            <h3 >Balance:</h3><span className={classes.balanceAmount}>{balance}</span>
+            <br />
+            <br />
+            </div>
+            <div div className={classes.incomeExpenseContainer}>
+            <h5>Total Sales:</h5> {incomeTotals}<br />
+            <h5>Total Expenses:</h5>{expenseTotals}<br />
+            </div>
         </>
     )
 }
