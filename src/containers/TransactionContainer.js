@@ -128,9 +128,11 @@ class TransactionContainer extends Component {
                 <td className={classes.transactionColumn}><IncomeForm toggle={this.toggleIncomeModal} {...this.state.incomeForm} display={this.state.incomeModal} onChange={this.onIncomeChange} onSubmit={this.onIncomeSubmit} /></td>
                 <td className={classes.transactionColumn}><ExpenseForm toggle={this.toggleExpenseModal} {...this.state.expenseForm} display={this.state.expenseModal} onChange={this.onExpenseChange} onSubmit={this.onExpenseSubmit} /></td>
             </tr>
+            <tr className={classes.transactionRow}>
+                <td className={classes.transactionColumn}>{this.props.incomes.filter(income => income.crop.id === parseInt(this.props.match.params.id)).map((income) => <Incomes key={income.id} {...income}/>)}</td>
+                <td className={classes.transactionColumn}>{this.props.expenses.filter(expense => expense.crop.id === parseInt(this.props.match.params.id)).map((expense) => <Expenses key={expense.id} {...expense}/>)}</td>
+            </tr>
             </table>
-            {this.props.incomes.filter(income => income.crop.id === parseInt(this.props.match.params.id)).map((income) => <Incomes key={income.id} {...income}/>)}
-            {this.props.expenses.filter(expense => expense.crop.id === parseInt(this.props.match.params.id)).map((expense) => <Expenses key={expense.id} {...expense}/>)}
             </>
 
         )

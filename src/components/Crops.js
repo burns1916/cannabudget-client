@@ -13,7 +13,7 @@ const Crops = props => {
 
         return(
           <div>
-               <br />
+            <br />
             <div className={classes.cropContainer}>
             <h3 className={classes.title}>Strain: {props.strain_name}</h3>
             <button onClick={onClick} className={classes.deleteBtn}><i class="fa fa-trash" aria-hidden="true"></i></button>

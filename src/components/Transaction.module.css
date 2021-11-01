@@ -36,7 +36,7 @@
     display: inline-block;
     float: left;
     clear: left;
-    width: 75px;
+    width: 60px;
     text-align: right;
 }
 
@@ -62,6 +62,14 @@
     cursor: pointer;
 }
 
+.incomeAmount{
+    color: rgb(1, 102, 16);
+}
+
+.expenseAmount{
+    color: red;
+}
+
 .transactionTable{
     width: 100%;
 }
@@ -76,10 +84,21 @@
 
 .incomeContainer{
     width: 25%;
+    display: flex;
 }
 
-.balanceContainer{
+.transactionContainer{
     display: flex;
+    justify-content: space-between;
+}
+
+.deleteBtn{
+    margin-right: 200px;
+}
+
+
+.balanceContainer{
+    display: flex;   
 }
 
 .balanceAmount{
@@ -87,9 +106,18 @@
 }
 
 .incomeExpenseContainer{
-    display: flex;
+    display: inline-flex;
+    width: 100%;
+}
+
+.totalIncomeContainer{
     width: 50%;
-    justify-content: space-between;
+    float: left;
+}
+
+.totalExpenseContainer{
+    width: 50%;
+    float: left;
 }
 
 .transactionFormContainer{
