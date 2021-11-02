@@ -46,7 +46,7 @@ class Signup extends Component {
                         <input placeholder="password" value={this.state.password} name="password" type="password" onChange={this.onChange} className={classes.formInput} />
                     </div>
                     <div>
-                        <input type="submit" value="Signup" className={classes.submitBtn} />
+                        <input type="submit" value="Signup" className={classes.formBtn} />
                     </div>
                 </form>
             </div>

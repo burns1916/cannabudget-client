@@ -13,7 +13,7 @@ const Expenses = props => {
         <>
         <div className={classes.transactionContainer}>
         <h4 className={classes.title}>Name: {props.name}</h4>
-        <button onClick={onClick} className={classes.deleteBtn}><i class="fa fa-trash" aria-hidden="true"></i></button>
+        <button onClick={onClick} className={classes.deleteBtn}><i className="fa fa-trash" aria-hidden="true"></i></button>
         </div>      
         <strong className={classes.title}>Amount:</strong> <span className={classes.expenseAmount}>${props.amount}</span>
         <br />

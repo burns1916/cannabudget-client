@@ -19,12 +19,12 @@ function App() {
       <Router>
         <NavBar />
         <Switch>
+          <Route exact path='/' component={Home} history={history} />
           <Route exact path='/login' component={Login} history={history} />
           <Route exact path='/signup' component={Signup} history={history} />
           <PrivateRoute exact path='/farms' component={FarmContainer} history={history} />
           <PrivateRoute exact path='/farms/:id/crops' component={CropContainer} history={history} />
           <PrivateRoute exact path='/farms/:id/crops/:id' component={TransactionContainer} history={history} />
-          <Route exact path='/' component={Home} history={history} />
         </Switch>
       </Router>
     </div>

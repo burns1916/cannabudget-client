@@ -15,7 +15,7 @@ const Farms = props => {
            <div>
             <div className={classes.farmContainer}>
             <h2 className={classes.title}>{props.name}</h2>
-            <button onClick={onClickDelete} className={classes.deleteBtn}><i class="fa fa-trash" aria-hidden="true"></i></button>
+            <button onClick={onClickDelete} className={classes.deleteBtn}><i className="fa fa-trash" aria-hidden="true"></i></button>
             </div>
             <h3 className={classes.title}> {props.location}</h3>
             <NavLink to={`/farms/${props.id}/crops`} className={classes.link}>Manage Crops</NavLink>
