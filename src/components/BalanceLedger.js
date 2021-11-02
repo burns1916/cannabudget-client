@@ -3,14 +3,17 @@ import classes from './Transaction.module.css'
 
 const BalanceLedger = props => {
 
+    //takes all income records and totals them
     const incomeValues = []
     props.incomes.forEach(income => incomeValues.push(income.amount))
     const incomeTotals = incomeValues.reduce((acc, val) => acc + val, 0)
 
+    //takes all expense records and totals them
     const expenseValues = []
     props.expenses.forEach(expense => expenseValues.push(expense.amount))
     const expenseTotals = expenseValues.reduce((acc, val) => acc + val, 0)
 
+    //calculates balance
     const balance = incomeTotals - expenseTotals 
 
     return(

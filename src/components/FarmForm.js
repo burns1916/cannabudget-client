@@ -7,9 +7,11 @@ const FarmForm = props => {
     const display = props.display ? "block" : "none"
     const { name, location, onChange, onSubmit } = props
 
+    //sets default country to the US and sets state
     const states = State.getStatesOfCountry('US')
     let [state, selectState] = useState("Select a State")
 
+    //renders city list based on state selection
     const cities = City.getCitiesOfState('US', state)
 
     let handleStateChange = (e) => {
