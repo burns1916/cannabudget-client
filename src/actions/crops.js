@@ -2,7 +2,6 @@ import {
     ADD_CROP,
     DELETE_CROP,
     GET_CROPS,
-    EDIT_CROP,
     SET_CROP,
     UNSET_CROP,
 } from '../actionTypes';
@@ -88,34 +87,3 @@ export const deleteCrop = (cropId) => {
     }
 }
 
-export const editCrop = (cropData) => {
-    return dispatch => {
-        const sendableCropData = {
-            strain_name: cropData.strain_name,
-            harvest_date: cropData.harvest_date,
-        }
-    return fetch(`${CROP_URL}/${cropData.id}`, {
-        credentials: "include",
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(sendableCropData),
-    })
-    .then(response => response.json())
-    .then(crop => {
-        if (crop.error) {
-            alert(crop.error)
-        } else {
-            dispatch({
-                type: EDIT_CROP,
-                crop
-            })
-            dispatch(getCurrentUser())
-        }
-    })
-    .catch((error) => {
-        console.log('Error:', error)
-    });
-    }
-}

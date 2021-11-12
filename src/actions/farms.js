@@ -1,7 +1,6 @@
 import {
     ADD_FARM,
     DELETE_FARM,
-    EDIT_FARM,
     GET_FARMS,
     SET_FARM,
     UNSET_FARM,
@@ -89,36 +88,5 @@ export const deleteFarm = (farmId) => {
     }
 }
 
-export const editFarm = (farmData) => {
-    return dispatch => {
-        const sendableFarmData = {
-            name: farmData.name,
-            location: farmData.location,
-        }
-        return fetch(`${FARM_URL}/${farmData.id}`, {
-            credentials: "include",
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(sendableFarmData),
-        })
-        .then(response => response.json())
-        .then(farm => {
-            if (farm.error) {
-                alert(farm.error)
-            } else {
-                dispatch ({
-                    type: EDIT_FARM,
-                    farm
-                })
-                dispatch(getCurrentUser())
-            }
-        })
-        .catch((error) => {
-            console.log('Error:', error)
-        });
-    }
-}
 
 

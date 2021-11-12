@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
-import { getCrops, addCrop, editCrop } from '../actions/crops';
+import { getCrops, addCrop } from '../actions/crops';
 import { getFarms, setFarm } from '../actions/farms';
 import Crops from '../components/Crops';
 import CropForm from '../components/CropForm';
@@ -33,11 +33,7 @@ class CropContainer extends Component{
 
     onCropSubmit = (e) => {
         e.preventDefault();
-        if (this.state.cropForm.id) {
-            this.props.editCrop(this.state.cropForm)
-        } else {
-            this.props.addCrop(this.state.cropForm)
-        }
+        this.props.addCrop(this.state.cropForm)
         this.setState({
             cropModal: false,
             cropForm: {
@@ -92,5 +88,5 @@ const mapStateToProps = state => {
     }
 }
 
-export default withRouter(connect(mapStateToProps, { getCrops, addCrop, editCrop, getFarms, setFarm })(CropContainer))
+export default withRouter(connect(mapStateToProps, { getCrops, addCrop, getFarms, setFarm })(CropContainer))
 

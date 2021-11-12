@@ -4,7 +4,7 @@ import leaves from '../imgs/leaves.jpeg'
 const Header = () => {
     return (
         <div className={classes.header} style={{ backgroundImage: `url(${leaves})` }}>
-                <h1>Farm Manager</h1>
+                <h1>CannaBudget</h1>
         </div>
     )
 }

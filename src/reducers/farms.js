@@ -1,7 +1,6 @@
 import {
     ADD_FARM,
     DELETE_FARM,
-    EDIT_FARM,
     GET_FARMS,
     SET_FARM,
     UNSET_FARM,
@@ -21,10 +20,6 @@ export function farmsReducer(state = initialState, action) {
             return {...state, farms: [...state.farms, action.farm]}
         case DELETE_FARM:
             return {...state, farms: [...state.farms.filter(farm => farm.id !== action.farmId)]}
-        case EDIT_FARM:
-            return {...state, 
-                  farms: [...state.farms.map(farm => farm.id === action.farm.id ? action.farm : farm)]
-                }
         case SET_FARM:
             return {...state, selectedFarm: action.farm}
         case UNSET_FARM:

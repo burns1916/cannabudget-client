@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
 import Farms from "../components/Farms";
 import FarmForm from "../components/FarmForm";
-import { getFarms, addFarm, editFarm} from '../actions/farms';
+import { getFarms, addFarm } from '../actions/farms';
 import classes from '../components/Farm.module.css'
 
 class FarmContainer extends Component {
@@ -34,11 +34,7 @@ class FarmContainer extends Component {
 
     onFarmSubmit = (e) => {
         e.preventDefault();
-        if (this.state.farmForm.id) {
-            this.props.editFarm(this.state.farmForm)
-        } else {
-            this.props.addFarm(this.state.farmForm)
-        }
+        this.props.addFarm(this.state.farmForm)
         this.setState({
             farmModal: false,
             farmForm: {
@@ -80,4 +76,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default withRouter(connect(mapStateToProps, { getFarms, addFarm, editFarm })(FarmContainer))
+export default withRouter(connect(mapStateToProps, { getFarms, addFarm })(FarmContainer))
