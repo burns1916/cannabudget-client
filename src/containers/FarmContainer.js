@@ -17,6 +17,11 @@ class FarmContainer extends Component {
         },
     }
 
+    
+    componentDidMount(){
+        this.props.getFarms()
+    }
+
     toggleFarmModal = () => this.setState({farmModal: !this.state.farmModal})
     
 
@@ -44,9 +49,6 @@ class FarmContainer extends Component {
         })
     }
 
-    componentDidMount(){
-        this.props.getFarms()
-    }
 
     openNewFarmForm = () => this.setState({
         farmModal: true,

@@ -23,7 +23,7 @@ const BalanceLedger = props => {
             <br />
             <br />
             </div>
-            <div div className={classes.incomeExpenseContainer}>
+            <div className={classes.incomeExpenseContainer}>
                 <div className={classes.totalIncomeContainer}><h5>Total Sales:</h5><span className={classes.incomeAmount}>${incomeTotals}</span></div><br />
                 <div className={classes.totalExpenseContainer}><h5>Total Expenses:</h5><span className={classes.expenseAmount}>${expenseTotals}</span></div><br />
                 <br />

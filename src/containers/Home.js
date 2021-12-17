@@ -27,7 +27,7 @@ class Home extends Component {
                         <th>Crops</th>
                     </tr>
 
-                {this.props.farms.filter(farm => farm.user.id === this.props.currentUser.currentUser.id).map(farms => 
+                {this.props.farms.length > 0 && this.props.farms.filter(farm => farm.user.id === this.props.currentUser.currentUser.id).map(farms => 
                     <tr >
                         <td className={classes.farmRow}>{farms.name}</td>
                         <td className={classes.farmRow}>{farms.location}</td>
